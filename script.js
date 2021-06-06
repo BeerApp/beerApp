@@ -38,7 +38,7 @@ const breweryLibrary = [
       {
         name: 'Sea Barrel 23',
         type: 'Riesling, Chardonnay & Sea BuckThorn',
-        category: 'sour',
+        category: 'Sour',
         abv: 6.3,
         size: 375,
         price: 10.18,
@@ -49,7 +49,7 @@ const breweryLibrary = [
       },
       {
         name: 'Pilsner',
-        type: 'pilsner tree',
+        type: 'Pilsner',
         category: 'pilsner',
         abv: 5.1,
         size: 355,
@@ -68,7 +68,7 @@ const breweryLibrary = [
       {
         name: 'Paradise Lost - Guava',
         type: 'Sour Ale',
-        category: 'sour',
+        category: 'Sour',
         abv: 6.9,
         size: 355,
         price: 4.95,
@@ -110,7 +110,7 @@ const breweryLibrary = [
       {
         name: 'Jelly King',
         category: 'Sour',
-        type: 'Dry-Hopped',
+        type: 'Dry-Hopped Sour',
         abv: 5.6,
         size: 500,
         price: 5.75,
@@ -140,7 +140,7 @@ const breweryLibrary = [
       {
         name: 'Helios',
         category: 'Lager',
-        type: 'Helles',
+        type: 'Helles Lager',
         abv: 5,
         size: 473,
         price: 3.36,
@@ -224,7 +224,7 @@ const breweryLibrary = [
       {
         name: 'Yuzu',
         category: 'Saison',
-        type: 'Citrus',
+        type: 'Citrus Saison',
         abv: 4.1,
         size: 355,
         // price not accurate, couldnt find online
@@ -243,7 +243,7 @@ const breweryLibrary = [
       {
         name: 'Truth Serum',
         category: 'IPA',
-        type: 'Double Dry-Hopped',
+        type: 'Double Dry-Hopped IPA',
         abv: 6.5,
         size: 335,
         price: 3.1,
@@ -255,7 +255,7 @@ const breweryLibrary = [
       {
         name: 'Malevolent Benevolence',
         category: 'Stout',
-        type: 'Coffee Cake',
+        type: 'Coffee Cake Stout',
         abv: 11.9,
         size: 375,
         price: 8.86,
@@ -273,7 +273,7 @@ const breweryLibrary = [
       {
         name: 'Sticky Paws',
         category: 'Stout',
-        type: 'Oatmeal with Maple Syrup',
+        type: 'Oatmeal Stout with Maple Syrup',
         abv: 5.5,
         size: 500,
         price: 8.0,
@@ -285,7 +285,7 @@ const breweryLibrary = [
       {
         name: 'Sitting Pretty',
         category: 'APA',
-        type: 'APA',
+        type: 'American Pale Ale',
         abv: 4.5,
         size: 500,
         price: 6.75,
@@ -334,7 +334,7 @@ const breweryLibrary = [
       {
         name: 'Zombie Apocalypse',
         category: 'Stout',
-        type: 'Imperial',
+        type: 'Imperial Stout',
         abv: 10,
         size: 500,
         price: 8.85,
@@ -345,7 +345,7 @@ const breweryLibrary = [
       {
         name: 'Lemonade Stand',
         category: 'Sour',
-        type: 'Lactose',
+        type: 'Lactose Sour',
         abv: 5,
         size: 355,
         price: 3.85,
@@ -357,7 +357,7 @@ const breweryLibrary = [
       {
         name: 'Momento Mori',
         category: 'Stout',
-        type: 'Oatmeal',
+        type: 'Oatmeal Stout',
         abv: 4.5,
         size: 500,
         price: 4.43,
