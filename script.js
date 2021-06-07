@@ -420,7 +420,7 @@ beerApp.url = 'https://api.openweathermap.org/data/2.5/weather';
 beerApp.key = 'e0554359d10b3fda0aa7048818773d46';
 
 beerApp.init = function () {
-    beerApp.getTheWeather('toronto');
+    beerApp.getTheWeather('new york');
 }
 
 beerApp.getTheWeather = function (location) {
@@ -441,32 +441,59 @@ beerApp.getTheWeather = function (location) {
 }
 
 beerApp.sortWeather = function (currentWeather) {
-   
+
+    const CurrentTemp = currentWeather.main.temp - 273.15;
+    const beerList = [];
+
+    //Pilsner
+    //Lager
+
+    if (CurrentTemp < 5) {
+        //Stout
+        //Porter
+        //Strong IPA / Double IPA
+        //Black Lager
+        //Amber Lager
+        //any beer >6% excluding sours
+
+    } else if (CurrentTemp > 5) {
+        
+        if (CurrentTemp < 15) {
+            //wheat
+            //Saisons
+            //Strong IPA / Double IPA
+            //APA
+        }
+    }
+    if (CurrentTemp > 10) {
+        //Sour
+        //Lighter IPAs
+        //APA
+
+        if (CurrentTemp > 15) {
+            //Cider
+            //Hard Seltzers
+        }
+    }
+
     //Year round
     //Pilsner
     //Lager
-    
-    //HOT SUNNY > 15 degrees
-    //Sour
+
+    // > 15
     //Cider
-    //Lighter IPAs
-    //APA
-    
+    //Hard Seltzers
+
     // > 10 degrees
+    //Sour
+    //Lighter IPAs
+    //APA
+
+    // > 5 && < 15 degrees
     //wheat
     //Saisons
     //Strong IPA / Double IPA
     //APA
-    //Sour
-    //Cider
-    //Lighter IPAs
-    // APA
-    
-    // > 5 degrees
-    //wheat
-    //Saisons
-    //Strong IPA / Double IPA
-    // APA
 
     // < 5 degrees
     //Stout
