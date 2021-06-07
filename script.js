@@ -4,67 +4,15 @@
 
 const beerApp = {}
 
-beerApp.url = 'https://api.openweathermap.org/data/2.5/weather'
-beerApp.key = 'e0554359d10b3fda0aa7048818773d46'
-
-beerApp.getTheWeather = function () {
-    const weatherApiUrl = new URL(beerApp.url)
-    weatherApiUrl.search = new URLSearchParams({
-        appid: beerApp.key,
-        q: 'toronto',
-        // zip: searchByZip
-    })
-    fetch(weatherApiUrl)
-        .then(function (weatherData) {
-            // console.log(weatherData);
-            return weatherData.json();
-        })
-        .then(function (weatherDataJson) {
-            console.log(weatherDataJson)
-        })
-}
-
-beerApp.init = function () {
-    beerApp.getTheWeather()
-}
-
-beerApp.init()
-
-const breweryLibrary = [
+beerApp.breweryLibrary = [
     {
-        brewery: "Bellwoods Brewery",
-        location: "124 Ossington Ave, Toronto, ON M6J 2Z5",
-        beerList: [
-            {
-                name: "Farmageddon",
-                type: "Barrel Aged Wild Farmhouse Ale",
-                category: "sour",
-                abv: 6.3,
-                size: 500,
-                price: 12.39,
-                img: "https://cdn.shopify.com/s/files/1/0072/8449/0309/products/Farmageddon_Batch15copy_460x.jpg?v=1595521561",
-                description: "Farmageddon is our wild farmhouse ale that we've been brewing, blending, and aging for almost as many years as we've been open. The blending process allows us to maintain a common thread across batches, the aging adds nuanced layers, while the brett and bacteria work hard to create small idiosyncrasies in each release.  It's a refined, effervescent, and delicious beer worthy of special occasions and idle weeknights."
-            },
-            {
-                name: "Roman Candle",
-                type: "IPA",
-                category: "ipa",
-                abv: 6.8,
-                size: 475,
-                price: 4.42,
-                img: "https://cdn.shopify.com/s/files/1/0072/8449/0309/products/RomanCandle_can_460x.jpg?v=1558052171",
-                description: "Roman Candle is the first IPA we ever brewed, back when we first got reliable access to Citra and decided to base a beer around it. Dry-hopped at the rate of our Double IPAs, perfectly balanced, and showcasing bright citrusy aromatics, “Rocan” has earned a place among our favourites."
-            }
-        ]
-    },
-    {
-        name: "Amsterdam Brewery",
+        brewery: "Amsterdam Brewery",
         location: "245 Queens Quay W, Toronto, ON M5J 2K9",
         beerList: [
             {
                 name: "Space Invader",
                 type: "IPA",
-                category: "ipa",
+                category: "IPA",
                 abv: 6,
                 size: 473,
                 price: 3.50,
@@ -74,7 +22,7 @@ const breweryLibrary = [
             {
                 name: "Boneshaker",
                 type: "IPA",
-                category: "ipa",
+                category: "IPA",
                 abv: 7.1,
                 size: 473,
                 price: 4.50,
@@ -84,13 +32,13 @@ const breweryLibrary = [
         ]
     },
     {
-        name: "Brickworks Cider House",
+        brewery: "Brickworks Cider House",
         location: "709 Queen St E, Toronto, ON M4M 1H1",
         beerList: [
             {
                 name: "Batch: 1904",
                 type: "Cider",
-                category: "cider",
+                category: "Cider",
                 abv: 5,
                 size: 473,
                 price: 3.50,
@@ -118,7 +66,7 @@ const breweryLibrary = [
             {
                 name: 'Pilsner',
                 type: 'Pilsner',
-                category: 'pilsner',
+                category: 'Pilsner',
                 abv: 5.1,
                 size: 355,
                 price: 3.98,
@@ -153,8 +101,8 @@ const breweryLibrary = [
         beerList: [
             {
                 name: 'Roman Candle',
-                category: 'IPA',
                 type: 'IPA',
+                category: 'IPA',
                 abv: 6.8,
                 size: 473,
                 price: 4.42,
@@ -165,8 +113,8 @@ const breweryLibrary = [
             },
             {
                 name: 'Jutsu',
-                category: 'Pale Ale',
                 type: 'Pale Ale',
+                category: 'Pale Ale',
                 abv: 5.6,
                 size: 473,
                 price: 3.98,
@@ -177,8 +125,8 @@ const breweryLibrary = [
             },
             {
                 name: 'Jelly King',
-                category: 'Sour',
                 type: 'Dry-Hopped Sour',
+                category: 'Sour',
                 abv: 5.6,
                 size: 500,
                 price: 5.75,
@@ -186,6 +134,16 @@ const breweryLibrary = [
                     'https://images.squarespace-cdn.com/content/v1/55081ed2e4b0db4245a9f024/1614359014692-NYPKR9UPSVV662LMMXGV/ke17ZwdGBToddI8pDm48kFQQgP34qnCpeHaeAOzTt7pZw-zPPgdn4jUwVcJE1ZvWQUxwkmyExglNqGp0IvTJZamWLI2zvYWH8K3-s_4yszcp2ryTI0HqTOaaUohrI8PICHnXC1b9smDvYLPdL-DS7U1pkhCtl83kemXd5r3C5ngKMshLAGzx4R3EDFOm1kBS/Beer+-+Bellwoods+Jelly+King_crop800px_bright%26contrast_tone%26warm_FINAL.jpg?format=1000w',
                 description:
                     'An everyday, juicy, drinkable sour with punchy hop aromatics and fruity foundational flavours. Low bitterness, light body, and pale yellow in colour, with notes of fuzzy peach, tangerine, and cedar.',
+            },
+            {
+                name: "Farmageddon",
+                type: "Barrel Aged Wild Farmhouse Ale",
+                category: "Sour",
+                abv: 6.3,
+                size: 500,
+                price: 12.39,
+                img: "https://cdn.shopify.com/s/files/1/0072/8449/0309/products/Farmageddon_Batch15copy_460x.jpg?v=1595521561",
+                description: "Farmageddon is our wild farmhouse ale that we've been brewing, blending, and aging for almost as many years as we've been open. The blending process allows us to maintain a common thread across batches, the aging adds nuanced layers, while the brett and bacteria work hard to create small idiosyncrasies in each release.  It's a refined, effervescent, and delicious beer worthy of special occasions and idle weeknights."
             },
         ]
     },
@@ -195,8 +153,8 @@ const breweryLibrary = [
         beerList: [
             {
                 name: 'One World',
-                category: 'Wit/Wheat',
                 type: 'Wit/Wheat',
+                category: 'Wheat',
                 abv: 5,
                 size: 473,
                 price: 3.46,
@@ -207,8 +165,8 @@ const breweryLibrary = [
             },
             {
                 name: 'Helios',
-                category: 'Lager',
                 type: 'Helles Lager',
+                category: 'Lager',
                 abv: 5,
                 size: 473,
                 price: 3.36,
@@ -225,8 +183,8 @@ const breweryLibrary = [
         beerList: [
             {
                 name: 'Sweet Spot',
-                category: 'Stout',
                 type: 'Mocha Marshmallow Stout',
+                category: 'Stout',
                 abv: 6.2,
                 size: 355,
                 // price not accurate, couldn't find it online
@@ -237,8 +195,8 @@ const breweryLibrary = [
             },
             {
                 name: 'Lo Viste',
-                category: 'Sour',
                 type: 'Mojito Sour',
+                category: 'Sour',
                 abv: 4.2,
                 size: 355,
                 price: 3.55,
@@ -249,8 +207,8 @@ const breweryLibrary = [
             },
             {
                 name: "O'Neill",
-                category: 'Stout',
                 type: 'Stout',
+                category: 'Stout',
                 abv: 4.5,
                 size: 355,
                 price: 2.68,
@@ -261,8 +219,8 @@ const breweryLibrary = [
             },
             {
                 name: 'Bricks + Mortar',
-                category: 'Porter',
                 type: 'Coffee Porter',
+                category: 'Porter',
                 abv: 6.0,
                 size: 355,
                 price: 2.68,
@@ -279,8 +237,8 @@ const breweryLibrary = [
         beerList: [
             {
                 name: 'Polotmavý Ležák 11°',
-                category: 'Lager',
                 type: 'Czech Amber Lager',
+                category: 'Lager',
                 abv: 4.4,
                 size: 355,
                 price: 3.5,
@@ -291,8 +249,8 @@ const breweryLibrary = [
             },
             {
                 name: 'Yuzu',
-                category: 'Saison',
                 type: 'Citrus Saison',
+                category: 'Saison',
                 abv: 4.1,
                 size: 355,
                 // price not accurate, couldnt find online
@@ -310,8 +268,8 @@ const breweryLibrary = [
         beerList: [
             {
                 name: 'Truth Serum',
-                category: 'IPA',
                 type: 'Double Dry-Hopped IPA',
+                category: 'IIPA',
                 abv: 6.5,
                 size: 335,
                 price: 3.1,
@@ -322,8 +280,8 @@ const breweryLibrary = [
             },
             {
                 name: 'Malevolent Benevolence',
-                category: 'Stout',
                 type: 'Coffee Cake Stout',
+                category: 'Stout',
                 abv: 11.9,
                 size: 375,
                 price: 8.86,
@@ -340,8 +298,8 @@ const breweryLibrary = [
         beerList: [
             {
                 name: 'Sticky Paws',
-                category: 'Stout',
                 type: 'Oatmeal Stout with Maple Syrup',
+                category: 'Stout',
                 abv: 5.5,
                 size: 500,
                 price: 8.0,
@@ -352,8 +310,8 @@ const breweryLibrary = [
             },
             {
                 name: 'Sitting Pretty',
-                category: 'APA',
                 type: 'American Pale Ale',
+                category: 'APA',
                 abv: 4.5,
                 size: 500,
                 price: 6.75,
@@ -370,8 +328,8 @@ const breweryLibrary = [
         beerList: [
             {
                 name: 'Octopus Wants To Fight',
-                category: 'IPA',
                 type: 'IPA',
+                category: 'IPA',
                 abv: 6.2,
                 size: 473,
                 // this price is per the lcbo
@@ -383,8 +341,8 @@ const breweryLibrary = [
             },
             {
                 name: 'Tango',
-                category: 'Wit/Wheat',
                 type: 'Tart Wheat Ale',
+                category: 'Wit/Wheat',
                 abv: 4.3,
                 size: 473,
                 price: 3.0,
@@ -396,7 +354,7 @@ const breweryLibrary = [
             {
                 name: "Canuck",
                 type: "Pale Ale",
-                category: "pale ale",
+                category: "Pale Ale",
                 abv: 5.2,
                 size: 473,
                 price: 2.90,
@@ -406,7 +364,7 @@ const breweryLibrary = [
             {
                 name: "Shinny Pants",
                 type: "Session Stout",
-                category: "stout",
+                category: "Stout",
                 abv: 4.3,
                 size: 473,
                 price: 3,
@@ -421,8 +379,8 @@ const breweryLibrary = [
         beerList: [
             {
                 name: 'Zombie Apocalypse',
-                category: 'Stout',
                 type: 'Imperial Stout',
+                category: 'Stout',
                 abv: 10,
                 size: 500,
                 price: 8.85,
@@ -432,8 +390,8 @@ const breweryLibrary = [
             },
             {
                 name: 'Lemonade Stand',
-                category: 'Sour',
                 type: 'Lactose Sour',
+                category: 'Sour',
                 abv: 5,
                 size: 355,
                 price: 3.85,
@@ -444,8 +402,8 @@ const breweryLibrary = [
             },
             {
                 name: 'Momento Mori',
-                category: 'Stout',
                 type: 'Oatmeal Stout',
+                category: 'Stout',
                 abv: 4.5,
                 size: 500,
                 price: 4.43,
@@ -455,7 +413,99 @@ const breweryLibrary = [
                     'A classic Low ABV Oatmeal Stout with a smooth body, and a hint of roasted bitterness.',
             },
         ]
-    },
+    }
 ]
 
-console.log(breweryLibrary.length);
+beerApp.url = 'https://api.openweathermap.org/data/2.5/weather';
+beerApp.key = 'e0554359d10b3fda0aa7048818773d46';
+
+beerApp.init = function () {
+    beerApp.getTheWeather('toronto');
+}
+
+beerApp.getTheWeather = function (location) {
+    const weatherApiUrl = new URL(beerApp.url)
+    weatherApiUrl.search = new URLSearchParams({
+        appid: beerApp.key,
+        q: location,
+        // zip: searchByZip
+    })
+    fetch(weatherApiUrl)
+        .then(function (weatherData) {
+            return weatherData.json();
+        })
+        .then(function (weatherDataJson) {
+            console.log(weatherDataJson);
+            beerApp.sortWeather(weatherDataJson);
+        })
+}
+
+beerApp.sortWeather = function (currentWeather) {
+   
+    //Year round
+    //Pilsner
+    //Lager
+    
+    //HOT SUNNY > 15 degrees
+    //Sour
+    //Cider
+    //Lighter IPAs
+    //APA
+    
+    // > 10 degrees
+    //wheat
+    //Saisons
+    //Strong IPA / Double IPA
+    //APA
+    //Sour
+    //Cider
+    //Lighter IPAs
+    // APA
+    
+    // > 5 degrees
+    //wheat
+    //Saisons
+    //Strong IPA / Double IPA
+    // APA
+
+    // < 5 degrees
+    //Stout
+    //Porter
+    //Strong IPA / Double IPA
+    //Black Lager
+    //Amber Lager
+    //any beer >6% excluding sours
+
+    beerApp.findBeer("IPA");
+}
+
+beerApp.findBeer = function (beerChoice) {
+    const beerSuggestions = [];
+    const testBeerCategorize = [];
+
+    for (let i = 0; i < beerApp.breweryLibrary.length; i++) {
+        const brewery = beerApp.breweryLibrary[i];
+
+        for (let j = 0; j < brewery.beerList.length; j++) {
+            const beerType = brewery.beerList[j];
+            testBeerCategorize.push(beerType.category);
+
+            if (beerType.category === beerChoice) {
+                beerType.parent = brewery.brewery;
+                beerSuggestions.push(beerType);
+            }
+        }
+    }
+
+    const randomValue = Math.floor(Math.random() * beerSuggestions.length);
+    const beerSuggestion = beerSuggestions[randomValue];
+
+    console.log(beerSuggestions);
+    console.log(beerSuggestion);
+    console.log(beerSuggestion.parent);
+
+
+    console.log(testBeerCategorize);
+}
+
+beerApp.init()
