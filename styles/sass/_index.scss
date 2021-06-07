@@ -1,0 +1,59 @@
+.landing {
+  background-image: url("../assets/RAIN\ OR\ SHINE\ BEER\ IS\ FINE-1.png");
+  height: 100vh;
+  background-size: cover;
+  .title {
+    text-align: center;
+    line-height: 0.8;
+  }
+  h1 {
+    padding-top: 7%;
+    font-size: 4.5rem;
+    text-transform: uppercase;
+    font-family: 'Londrina Outline', cursive;
+    text-shadow: 1px 1px black;
+    span {
+      display: block;
+      font-size: 6.5rem;
+      font-family: 'Londrina Solid', cursive;
+      text-shadow: 5px 5px rgb(255, 246, 125);
+    }
+  }
+  .landing-text {
+    text-align: center;
+    margin-top: 6%;
+    font-size: 1.5rem;
+    font-family: 'Roboto Mono', monospace;
+    text-shadow: 1px 1px black;
+    line-height: 1.2;
+    text-transform: uppercase;
+  }
+  form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    label {
+      font-family: 'Roboto Mono', monospace;
+      margin-top: 5%;
+      text-transform: uppercase;
+      font-weight: bold;
+
+    }
+    input[type=text] {
+      margin-top: 1.5%;
+      width: 100%;
+      align-self: center;
+      background: transparent;
+      border: none;
+      text-align: center;
+      text-transform: uppercase;
+      font-family: 'Roboto Mono', monospace;
+      font-weight: bold;
+      &:focus {
+        outline: none;
+        font-size: 2rem;
+      }
+    }
+  }
+}
