@@ -1,8 +1,32 @@
-// key: '35bea0b3b4ff80e097da0404ff56e205'
-// endpoint: 'https://api.openweathermap.org/data/2.5/weather'
-// console.log("hello world!");
+//Year round
+//Pilsner
+//Lager
 
-const beerApp = {}
+// > 15
+//Cider
+//Hard Seltzers
+
+// > 10 degrees
+//Sour
+//Lighter IPAs
+//APA
+
+// > 5 && < 15 degrees
+//wheat
+//Saisons
+//Strong IPA / Double IPA
+//APA
+
+// < 5 degrees
+//Stout
+//Porter
+//Strong IPA / Double IPA
+//Black Lager
+//Amber Lager
+//any beer >6% excluding sours
+
+
+const beerApp = {};
 
 beerApp.breweryLibrary = [
     {
@@ -420,7 +444,19 @@ beerApp.url = 'https://api.openweathermap.org/data/2.5/weather';
 beerApp.key = 'e0554359d10b3fda0aa7048818773d46';
 
 beerApp.init = function () {
-    beerApp.getTheWeather('new york');
+    beerApp.getSubmit();
+    beerApp.allBeer = beerApp.getBeer();
+}
+
+beerApp.getSubmit = function() {
+    document.querySelector('form').addEventListener('submit', function(event){
+        event.preventDefault();
+        getCity = document.querySelector('input[type="text"]').value;
+        beerApp.getTheWeather(beerApp.getCity);
+
+        console.log(event);
+        console.log(beerApp.getCity);
+    })
 }
 
 beerApp.getTheWeather = function (location) {
@@ -442,97 +478,101 @@ beerApp.getTheWeather = function (location) {
 
 beerApp.sortWeather = function (currentWeather) {
 
-    const CurrentTemp = currentWeather.main.temp - 273.15;
-    const beerList = [];
-
-    //Pilsner
-    //Lager
+    const CurrentTemp = Math.floor(currentWeather.main.temp - 273.15);
+    console.log(CurrentTemp);
+    const beerList = ["Pilsner", "Lager"];
 
     if (CurrentTemp < 5) {
-        //Stout
-        //Porter
-        //Strong IPA / Double IPA
-        //Black Lager
-        //Amber Lager
+        beerList.push("Stout", "Porter", "IIPA", "Black Lager", "Amber Lager")
+
         //any beer >6% excluding sours
 
     } else if (CurrentTemp > 5) {
-        
+
         if (CurrentTemp < 15) {
-            //wheat
-            //Saisons
-            //Strong IPA / Double IPA
-            //APA
+            beerList.push("wheat", "Saison", "IIPA", "APA");
+
+            //Strong IPA
         }
     }
     if (CurrentTemp > 10) {
-        //Sour
+        beerList.push("Sour");
         //Lighter IPAs
-        //APA
 
         if (CurrentTemp > 15) {
-            //Cider
+            beerList.push("Cider");
+
             //Hard Seltzers
         }
     }
 
-    //Year round
-    //Pilsner
-    //Lager
+    console.log(beerList);
 
-    // > 15
-    //Cider
-    //Hard Seltzers
+    const randomCategory = Math.floor(Math.random() * beerList.length);
+    const beerCategory = beerList[randomCategory];
 
-    // > 10 degrees
-    //Sour
-    //Lighter IPAs
-    //APA
-
-    // > 5 && < 15 degrees
-    //wheat
-    //Saisons
-    //Strong IPA / Double IPA
-    //APA
-
-    // < 5 degrees
-    //Stout
-    //Porter
-    //Strong IPA / Double IPA
-    //Black Lager
-    //Amber Lager
-    //any beer >6% excluding sours
-
-    beerApp.findBeer("IPA");
+    beerApp.chooseBeer(beerCategory);
 }
 
-beerApp.findBeer = function (beerChoice) {
-    const beerSuggestions = [];
-    const testBeerCategorize = [];
-
-    for (let i = 0; i < beerApp.breweryLibrary.length; i++) {
-        const brewery = beerApp.breweryLibrary[i];
-
-        for (let j = 0; j < brewery.beerList.length; j++) {
-            const beerType = brewery.beerList[j];
-            testBeerCategorize.push(beerType.category);
-
-            if (beerType.category === beerChoice) {
-                beerType.parent = brewery.brewery;
-                beerSuggestions.push(beerType);
-            }
-        }
-    }
+beerApp.chooseBeer = (categoryChoice) => {
+    const beerSuggestions = beerApp.allBeer.filter(beer => {
+        return beer.category === categoryChoice;
+    })
 
     const randomValue = Math.floor(Math.random() * beerSuggestions.length);
     const beerSuggestion = beerSuggestions[randomValue];
 
     console.log(beerSuggestions);
     console.log(beerSuggestion);
-    console.log(beerSuggestion.parent);
-
-
-    console.log(testBeerCategorize);
+    // console.log(beerSuggestion.parent);
 }
+
+
+beerApp.getBeer = function () {
+    const beerSuggestions = [];
+
+    for (let i = 0; i < beerApp.breweryLibrary.length; i++) {
+        const brewery = beerApp.breweryLibrary[i];
+
+        for (let j = 0; j < brewery.beerList.length; j++) {
+            const beerType = brewery.beerList[j];
+
+            beerType.parent = brewery.brewery;
+            beerSuggestions.push(beerType);
+        }
+    }
+
+    return beerSuggestions;
+}
+
+
+//OLD WAY OF RETURNING BEER CHOICE FROM CATEGORY
+//Replaced with "beerApp.allBeer" in init();
+//More dry
+
+// beerApp.findBeer = (beerSelection) => {
+//     const beerSuggestions = [];
+
+//     for (let i = 0; i < beerApp.breweryLibrary.length; i++) {
+//         const brewery = beerApp.breweryLibrary[i];
+
+//         for (let j = 0; j < brewery.beerList.length; j++) {
+//             const beerType = brewery.beerList[j];
+
+//             if (beerType.category === beerSelection) {
+//                 beerType.parent = brewery.brewery;
+//                 beerSuggestions.push(beerType);
+//             }
+//         }
+//     }
+
+//     const randomValue = Math.floor(Math.random() * beerSuggestions.length);
+//     const beerSuggestion = beerSuggestions[randomValue];
+
+//     console.log(beerSuggestions);
+//     console.log(beerSuggestion);
+//     console.log(beerSuggestion.parent);
+// }
+
 
 beerApp.init()
