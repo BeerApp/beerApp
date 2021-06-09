@@ -517,17 +517,40 @@ beerApp.sortWeather = function (currentWeather) {
     console.log(beerCategory);
     
     const beerSelection = beerApp.chooseBeer(beerCategory);
-    beerApp.displayInfo(beerSelection);
+    beerApp.displayInfo(beerSelection, CurrentTemp);
 
     console.log(beerSelection);
     console.log(beerSelection.parent);
 }
 
-beerApp.displayInfo = function(beerSuggestion) {
+beerApp.displayInfo = function(beerSuggestion, currentTemp) {
     currentWeather = beerApp.currentWeather;
     console.log(currentWeather);
     console.log(beerSuggestion);
+    // this code is taking the .weather-container div, appending a child p tag to it, with inner text that displays the user's input and weather results 
+    const weatherDiv = document.querySelector('.weather-container')
+    const newP = document.createElement('p')
+    newP.innerText = `${currentWeather.name}: ${currentTemp} ${currentWeather.weather[0].description}`
+    weatherDiv.appendChild(newP);
 
+    const brewery = document.querySelector('.brewery')
+    brewery.innerText = `${beerSuggestion.parent}`
+
+    const beerName = document.querySelector('.beer-name')
+    beerName.innerText = `"${beerSuggestion.name}"`
+
+    const beerDescription = document.querySelector('.beer-description')
+    beerDescription.innerText = `${beerSuggestion.description}`
+
+    const beerType = document.querySelector('.beer-type')
+    beerType.innerText = `${beerSuggestion.type}`
+
+    const beerImage = document.querySelector('.beer-image')
+    beerImage.src = `${beerSuggestion.img}`
+
+    const beerAbv = document.querySelector('.abv')
+    beerAbv.innerText = `${beerSuggestion.abv}`
+    
 
 
 
@@ -546,8 +569,8 @@ beerApp.chooseBeer = (categoryChoice) => {
 
     return beerSuggestion;
 
-    console.log(beerSuggestions);
-    console.log(beerSuggestion);
+    // console.log(beerSuggestions);
+    // console.log(beerSuggestion);
     // console.log(beerSuggestion.parent);
 }
 
