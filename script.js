@@ -444,17 +444,17 @@ beerApp.url = 'https://api.openweathermap.org/data/2.5/weather';
 beerApp.key = 'e0554359d10b3fda0aa7048818773d46';
 
 beerApp.init = function () {
-    beerApp.getSubmit();
     beerApp.allBeer = beerApp.getBeer();
+    beerApp.getSubmit();
 }
 
 beerApp.getSubmit = function() {
     document.querySelector('form').addEventListener('submit', function(event){
         event.preventDefault();
         getCity = document.querySelector('input[type="text"]').value;
-        beerApp.getTheWeather(beerApp.getCity);
+        beerApp.getTheWeather(getCity);
 
-        console.log(event);
+        // console.log(event);
         console.log(beerApp.getCity);
     })
 }
@@ -472,6 +472,9 @@ beerApp.getTheWeather = function (location) {
         })
         .then(function (weatherDataJson) {
             console.log(weatherDataJson);
+
+            beerApp.currentWeather = weatherDataJson;
+
             beerApp.sortWeather(weatherDataJson);
         })
 }
@@ -511,7 +514,26 @@ beerApp.sortWeather = function (currentWeather) {
     const randomCategory = Math.floor(Math.random() * beerList.length);
     const beerCategory = beerList[randomCategory];
 
-    beerApp.chooseBeer(beerCategory);
+    console.log(beerCategory);
+    
+    const beerSelection = beerApp.chooseBeer(beerCategory);
+    beerApp.displayInfo(beerSelection);
+
+    console.log(beerSelection);
+    console.log(beerSelection.parent);
+}
+
+beerApp.displayInfo = function(beerSuggestion) {
+    currentWeather = beerApp.currentWeather;
+    console.log(currentWeather);
+    console.log(beerSuggestion);
+
+
+
+
+
+
+
 }
 
 beerApp.chooseBeer = (categoryChoice) => {
@@ -521,6 +543,8 @@ beerApp.chooseBeer = (categoryChoice) => {
 
     const randomValue = Math.floor(Math.random() * beerSuggestions.length);
     const beerSuggestion = beerSuggestions[randomValue];
+
+    return beerSuggestion;
 
     console.log(beerSuggestions);
     console.log(beerSuggestion);
@@ -545,11 +569,13 @@ beerApp.getBeer = function () {
     return beerSuggestions;
 }
 
+beerApp.init();
 
 //OLD WAY OF RETURNING BEER CHOICE FROM CATEGORY
 //Replaced with "beerApp.allBeer" in init();
 //More dry
 
+//Beer selection being a category 
 // beerApp.findBeer = (beerSelection) => {
 //     const beerSuggestions = [];
 
@@ -575,4 +601,9 @@ beerApp.getBeer = function () {
 // }
 
 
-beerApp.init()
+//Issues
+//randomly selecting a category, then randomly selecting a beer from that category doesnt supply the results we want.
+//Some categories only have one beer in them, which is good if their category appears more often.
+//example: comparing Sour category to Pilsner category is a 1:1 ratio. But looking at each category, Sour has many beer inside of it, compared to Pilsers few beer.
+//For summer category, it shouldnt be 1:1 Sour/Pilsner, it would be a better result to randomly select between all sour and all pilsner beer. 
+//This would make the results more often sours in the summer time
