@@ -262,38 +262,49 @@ img {
   margin: 0 auto;
 }
 
-.landing {
+header {
   background-image: url("../assets/RAIN OR SHINE BEER IS FINE-1.png");
   height: 100vh;
   background-size: cover;
 }
-.landing .title {
+header .landing {
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+header .title {
   text-align: center;
   line-height: 0.8;
 }
-.landing h1 {
-  padding-top: 7%;
+header h1 {
   font-size: 4.5rem;
   text-transform: uppercase;
   font-family: "Londrina Outline", cursive;
   text-shadow: 1px 1px black;
 }
-.landing h1 span {
+header h1 span {
   display: block;
   font-size: 6.5rem;
   font-family: "Londrina Solid", cursive;
   text-shadow: 5px 5px #fff67d;
 }
-.landing .landing-text {
+header .landing-text {
   text-align: center;
-  margin-top: 6%;
   font-size: 1.5rem;
   font-family: "Roboto Mono", monospace;
   text-shadow: 1px 1px black;
   line-height: 1.2;
   text-transform: uppercase;
 }
-.landing form {
+header form {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -306,15 +317,14 @@ img {
           justify-content: center;
   text-align: center;
 }
-.landing form label {
+header form label {
   font-family: "Roboto Mono", monospace;
-  margin-top: 5%;
   text-transform: uppercase;
   font-weight: bold;
 }
-.landing form input[type=text] {
+header form input[type=text] {
   margin-top: 1.5%;
-  width: 100%;
+  width: 30%;
   -ms-flex-item-align: center;
       align-self: center;
   background: transparent;
@@ -323,8 +333,55 @@ img {
   text-transform: uppercase;
   font-family: "Roboto Mono", monospace;
   font-weight: bold;
+  font-size: 1.5rem;
+  border-bottom: 1.5px solid black;
 }
-.landing form input[type=text]:focus {
+header form input[type=text]:focus {
   outline: none;
-  font-size: 2rem;
+}
+
+.beer {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background: #fff99f;
+  padding-top: 5%;
+  text-align: center;
+}
+.beer .weather-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  font-family: "Roboto Mono", monospace;
+}
+.beer .weather-container .fa-sun {
+  margin-right: 1.5%;
+}
+.beer .beer-name,
+.beer .brewery {
+  font-size: 4rem;
+  text-transform: uppercase;
+  font-family: "Londrina Solid", cursive;
+}
+.beer .brewery {
+  font-family: "Londrina Outline", cursive;
+  font-size: 2.5rem;
+  margin-top: 5%;
+}
+.beer .beer-results {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+.beer .beer-results .image-container {
+  width: 40%;
+  height: auto;
+}
+.beer .beer-results .image-container img {
+  width: 100%;
+  border-radius: 10px;
 }
