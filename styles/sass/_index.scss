@@ -2,16 +2,19 @@ header {
   background-image: url("../assets/RAIN\ OR\ SHINE\ BEER\ IS\ FINE-1.png");
   height: 100vh;
   background-size: cover;
+
   .landing {
     height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
   }
+  
   .title {
     text-align: center;
     line-height: 0.8;
   }
+  
   h1 {
     font-size: 4.5rem;
     text-transform: uppercase;
@@ -24,6 +27,7 @@ header {
       text-shadow: 5px 5px rgb(255, 246, 125);
     }
   }
+  
   .landing-text {
     text-align: center;
     font-size: 1.5rem;
@@ -32,17 +36,20 @@ header {
     line-height: 1.2;
     text-transform: uppercase;
   }
+  
   form {
     display: flex;
     flex-direction: column;
     justify-content: center;
     text-align: center;
+  
     label {
       font-family: 'Roboto Mono', monospace;
       text-transform: uppercase;
       font-weight: bold;
 
     }
+
     input[type=text] {
       margin-top: 1.5%;
       width: 30%;
@@ -56,6 +63,7 @@ header {
       font-size: 1.5rem;
       border-bottom: 1.5px solid black;
       // i think we need to add hover to this as well for accessbility (???) 
+    
       &:focus {
         // keep the outline but change the color 
         outline: none;
@@ -69,28 +77,34 @@ header {
   background:rgb(255, 249, 159);
   padding-top: 5%;
   text-align: center;
-    .weather-container {
+
+  .weather-container {
       display: flex;
       font-family: 'Roboto Mono', monospace;
-        .fa-sun {
+     
+      .fa-sun {
           margin-right: 1.5%;
         }
     }
+   
     .beer-name, 
     .brewery {
       font-size: 4rem;
       text-transform: uppercase;
       font-family: 'Londrina Solid', cursive;
     }
+  
     .brewery {
       font-family: 'Londrina Outline', cursive;
       font-size: 2.5rem;
       margin-top: 5%;
     }
+
     .beer-results {
       display: flex;
       flex-direction: column;
-        .image-container {
+    
+      .image-container {
           width: 40%;
           height: auto;
             img {
