@@ -268,6 +268,38 @@ img {
   margin: 0 auto;
 }
 
+h1,
+h2 {
+  text-transform: uppercase;
+  font-family: "Londrina Outline", cursive;
+  text-align: center;
+  line-height: 0.8;
+}
+
+h1 {
+  font-size: 4.5rem;
+  text-shadow: 1px 1px black;
+}
+h1 span {
+  display: block;
+  font-size: 6.5rem;
+  font-family: "Londrina Solid", cursive;
+  text-shadow: 5px 5px #fff67d;
+}
+
+h2 {
+  font-size: 2.5rem;
+  margin: 0;
+}
+h2.brewery {
+  text-shadow: 0.3px 0.3px black;
+  margin: 10px 0 0 0;
+}
+h2.beer-name {
+  font-size: 3.5rem;
+  font-family: "Londrina Solid", cursive;
+}
+
 header {
   background-image: url("../assets/RAIN OR SHINE BEER IS FINE-1.png");
   height: 100vh;
@@ -285,22 +317,6 @@ header .landing-page {
   -webkit-box-pack: space-evenly;
       -ms-flex-pack: space-evenly;
           justify-content: space-evenly;
-}
-header .title {
-  text-align: center;
-  line-height: 0.8;
-}
-header h1 {
-  font-size: 4.5rem;
-  text-transform: uppercase;
-  font-family: "Londrina Outline", cursive;
-  text-shadow: 1px 1px black;
-}
-header h1 span {
-  display: block;
-  font-size: 6.5rem;
-  font-family: "Londrina Solid", cursive;
-  text-shadow: 5px 5px #fff67d;
 }
 header .landing-text {
   text-align: center;
@@ -352,10 +368,13 @@ header form:focus > input[type=text], header form:hover > input[type=text] {
   border-bottom: 1.5px solid transparent;
 }
 
+.change-background {
+  background: #fff99f;
+}
+
 .beer-page {
   width: 100%;
   height: 100vh;
-  background: #fff99f;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -369,38 +388,27 @@ header form:focus > input[type=text], header form:hover > input[type=text] {
 .beer-page .weather-container .fa-sun {
   margin-right: 1.5%;
 }
-.beer-page .beer-name,
-.beer-page .brewery {
-  text-align: center;
-  text-transform: uppercase;
-  font-size: 2.5rem;
-  font-family: "Londrina Outline", cursive;
-}
-.beer-page .brewery {
-  text-shadow: 0.3px 0.3px black;
-}
-.beer-page .beer-name {
-  font-size: 3.5rem;
-  font-family: "Londrina Solid", cursive;
-  margin-top: 5%;
-}
 .beer-page .side-panel {
+  z-index: 1;
   width: 25%;
   background: white;
+  background: -webkit-gradient(linear, left top, left bottom, from(white), color-stop(78%, whitesmoke), color-stop(89%, #cccccc), color-stop(99%, white), to(white));
+  background: linear-gradient(180deg, white 0%, whitesmoke 78%, #cccccc 89%, white 99%, white 100%);
 }
-.beer-page .side-panel .background-rad {
+.beer-page .side-panel .change-background {
   height: 100%;
   padding-bottom: 10px;
-  background: #fff99f;
-  border-radius: 0 30px 250px 0;
+  border-radius: 0 0 200px 0;
+  -webkit-box-shadow: 0 0 20px lightgray;
+          box-shadow: 0 0 20px lightgray;
 }
 .beer-page .side-panel.right-panel {
   -webkit-box-ordinal-group: 4;
       -ms-flex-order: 3;
           order: 3;
 }
-.beer-page .side-panel.right-panel .background-rad {
-  border-radius: 30px 0 0 250px;
+.beer-page .side-panel.right-panel .change-background {
+  border-radius: 0 0 0 200px;
 }
 .beer-page .side-panel .beer-name,
 .beer-page .side-panel .brewery {
@@ -412,6 +420,11 @@ header form:focus > input[type=text], header form:hover > input[type=text] {
   -webkit-box-ordinal-group: 3;
       -ms-flex-order: 2;
           order: 2;
+  width: 50%;
+  height: 100%;
+}
+.beer-page .results {
+  height: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -423,11 +436,27 @@ header form:focus > input[type=text], header form:hover > input[type=text] {
       -ms-flex-pack: justify;
           justify-content: space-between;
   background: white;
-  width: 50%;
-  height: 100%;
+  background: -webkit-gradient(linear, left top, left bottom, from(white), color-stop(78%, whitesmoke), color-stop(89%, #cccccc), color-stop(99%, white), to(white));
+  background: linear-gradient(180deg, white 0%, whitesmoke 78%, #cccccc 89%, white 99%, white 100%);
 }
-.beer-page .beer-results .image-container {
-  height: 80%;
+.beer-page .results-title {
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+.beer-page .image-container {
+  max-height: 80%;
+  height: auto;
   width: auto;
   padding: 0 40px;
   display: -webkit-box;
@@ -441,7 +470,7 @@ header form:focus > input[type=text], header form:hover > input[type=text] {
       -ms-flex-pack: end;
           justify-content: flex-end;
 }
-.beer-page .beer-results .image-container img {
+.beer-page .image-container img {
   display: block;
   -o-object-fit: contain;
      object-fit: contain;

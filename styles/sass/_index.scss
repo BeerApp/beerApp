@@ -1,3 +1,41 @@
+$background-gradient: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(245,245,245,1) 78%, rgba(204,204,204,1) 89%, rgba(255,255,255,1) 99%, rgba(255,255,255,1) 100%);
+$my-box-shadow: 0 0 20px lightgray;
+$accent-color: rgb(255, 249, 159);
+
+h1,
+h2 {
+  text-transform: uppercase;
+  font-family: 'Londrina Outline', cursive;
+  text-align: center;
+  line-height: 0.8;
+}
+
+h1 {
+  font-size: 4.5rem;
+  text-shadow: 1px 1px black;
+  span {
+    display: block;
+    font-size: 6.5rem;
+    font-family: 'Londrina Solid', cursive;
+    text-shadow: 5px 5px rgb(255, 246, 125);
+  }
+}
+
+h2 {
+  font-size: 2.5rem;
+  margin: 0;
+  
+  &.brewery {
+    text-shadow: 0.3px 0.3px black;
+    margin: 10px 0 0 0;
+  }
+  
+  &.beer-name {
+    font-size: 3.5rem;
+    font-family: 'Londrina Solid', cursive;
+  }
+}
+
 header {
   background-image: url("../assets/RAIN\ OR\ SHINE\ BEER\ IS\ FINE-1.png");
   height: 100vh;
@@ -8,24 +46,6 @@ header {
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
-  }
-  
-  .title {
-    text-align: center;
-    line-height: 0.8;
-  }
-  
-  h1 {
-    font-size: 4.5rem;
-    text-transform: uppercase;
-    font-family: 'Londrina Outline', cursive;
-    text-shadow: 1px 1px black;
-    span {
-      display: block;
-      font-size: 6.5rem;
-      font-family: 'Londrina Solid', cursive;
-      text-shadow: 5px 5px rgb(255, 246, 125);
-    }
   }
   
   .landing-text {
@@ -65,7 +85,7 @@ header {
       // i think we need to add hover to this as well for accessbility (???) 
 
       &:focus {
-        outline: 2px solid rgb(255, 249, 159);
+        outline: 2px solid $accent-color;
         border-bottom: 1.5px solid transparent;
       }
     }
@@ -73,16 +93,19 @@ header {
     &:focus > input[type=text],
     &:hover > input[type=text] {
       // keep the outline but change the color 
-      outline: 2px solid rgb(255, 249, 159);
+      outline: 2px solid $accent-color;
       border-bottom: 1.5px solid transparent;
     }
   }
 }
 
+.change-background {
+  background: $accent-color;
+}
+
 .beer-page {
   width: 100%;
   height: 100vh;
-  background:rgb(255, 249, 159);
   // padding-top: 5%;
   // text-align: center;
 
@@ -96,44 +119,28 @@ header {
       margin-right: 1.5%;
     }
   }
-   
-  .beer-name, 
-  .brewery {
-    text-align: center;
-    text-transform: uppercase;
-
-    font-size: 2.5rem;
-    font-family: 'Londrina Outline', cursive;
-  }
-
-  .brewery {
-    text-shadow: 0.3px 0.3px black;
-  }
-  
-  .beer-name {
-    font-size: 3.5rem;
-    font-family: 'Londrina Solid', cursive;  
-    margin-top: 5%;
-  }
 
   .side-panel {
+    z-index: 1;
+
     width: 25%;
 
     background: white;
+    background: $background-gradient;
 
-    .background-rad {
+    .change-background {
       height: 100%;
       padding-bottom: 10px;
+      border-radius: 0 0 200px 0;
 
-      background:rgb(255, 249, 159);
-      border-radius: 0 30px 250px 0;
+      box-shadow: $my-box-shadow
     }
     
     &.right-panel {
       order: 3;
 
-      .background-rad {
-        border-radius: 30px 0 0 250px;
+      .change-background {
+        border-radius: 0 0 0 200px;
       }
     }
 
@@ -148,37 +155,53 @@ header {
   .beer-results {
     order:2;
     
+    width: 50%;
+    height: 100%;
+  }
+  
+  .results {
+    height: 100%;
+
     display: flex;
     flex-direction: column;
     justify-content: space-between;
 
-    background: white;
+    background: rgb(255,255,255);
+    background: $background-gradient;
 
-    width: 50%;
-    height: 100%;
+    // border-radius: 60px 60px 0 0;
+  }
 
-    .image-container {
-      height: 80%;
-      width: auto;
-      padding: 0 40px;
+  .results-title {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
 
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-end;
+  .image-container {
+    max-height: 80%;
+    height: auto;
+    width: auto;
+    padding: 0 40px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    
+    img {
+      display: block;
+      object-fit: contain;
+      margin: 0 auto;
       
-      img {
-        display: block;
-        object-fit: contain;
-        margin: 0 auto;
-        
-        width: auto;
-        height: auto;
-        max-width: 100%;
-        max-height: 100%;
-        
-        border-radius: 40px 40px 0 0;
-      }
+      width: auto;
+      height: auto;
+      max-width: 100%;
+      max-height: 100%;
+      
+      border-radius: 40px 40px 0 0;
     }
+  
   }
 }
 
