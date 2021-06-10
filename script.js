@@ -576,6 +576,7 @@ beerApp.chooseBeer = (categoryChoice) => {
     // console.log(beerSuggestions);
     // console.log(beerSuggestion);
     // console.log(beerSuggestion.parent);
+    
 }
 
 
