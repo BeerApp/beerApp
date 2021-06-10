@@ -3,6 +3,7 @@ $accent-color: rgb(255, 249, 159);
 
 $font-1-solid: 'Londrina Solid', cursive;
 $font-1-outline: 'Londrina Outline', cursive;
+$font-2: 'Roboto Mono', monospace;
 
 h1,
 h2,
@@ -41,7 +42,7 @@ h2 {
 
 h3 {
   padding: 75px 0;
-  font-family: 'Roboto Mono', monospace;
+  font-family: $font-2;
   font-size: 2rem;
   line-height: 1;
 }
@@ -66,7 +67,7 @@ header {
   .landing-text {
     text-align: center;
     font-size: 1.5rem;
-    font-family: 'Roboto Mono', monospace;
+    font-family: $font-2;
     text-shadow: 1px 1px black;
     line-height: 1.2;
     text-transform: uppercase;
@@ -79,7 +80,7 @@ header {
     text-align: center;
   
     label {
-      font-family: 'Roboto Mono', monospace;
+      font-family: $font-2;
       text-transform: uppercase;
       font-weight: bold;
     }
@@ -94,7 +95,7 @@ header {
       border-bottom: 1.5px solid black;
       text-align: center;
       text-transform: uppercase;
-      font-family: 'Roboto Mono', monospace;
+      font-family: $font-2;
       font-weight: bold;
       font-size: 1.5rem;
 
@@ -122,9 +123,11 @@ header {
 
   display: flex;
 
+  background: $background-gradient;
+
   .weather-container {
     display: flex;
-    font-family: 'Roboto Mono', monospace;
+    font-family: $font-2;
     
     .fa-sun {
       margin-right: 1.5%;
@@ -133,22 +136,15 @@ header {
 
   .side-panel {
     z-index: 1;
+    
+    display: flex;
+    flex-direction: column;
 
     width: 25%;
-
-    background: white;
-    background: $background-gradient;
-
-    .change-background {
-      height: 100%;
-      padding: 20px;
-      border-radius: 0 0 200px 0;
-
-      box-shadow: 10px 0 20px -10px lightgray;
-
-      display: flex;
-      flex-direction: column;
-    }
+    height: 100%;
+    padding: 20px;
+    border-radius: 0 0 200px 0;
+    box-shadow: 10px 0 20px -10px lightgray;
 
     .beer-details {
       display: flex;
@@ -160,18 +156,16 @@ header {
       height: 30%;
 
       div {
-        width: auto;
-        // margin-top: 30px;
         padding: 10px;
       }
       
       div:nth-child(1) {
         border-bottom: 2px solid black;
+        padding-bottom: 12px;
       }
 
       P {
-        
-        font-family: 'Roboto Mono', monospace;
+        font-family: $font-2;
         font-size: 1.5rem;
       }
     }
@@ -179,10 +173,8 @@ header {
     &.right-panel {
       order: 3;
 
-      .change-background {
-        border-radius: 0 0 0 200px;
-        box-shadow: -10px 0 20px -10px lightgray;
-      }
+      border-radius: 0 0 0 200px;
+      box-shadow: -10px 0 20px -10px lightgray;
     }
   }
 
@@ -191,17 +183,10 @@ header {
     
     width: 50%;
     height: 100%;
-  }
-  
-  .results {
-    height: 100%;
 
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-
-    background: rgb(255,255,255);
-    background: $background-gradient;
   }
 
   .results-title {
@@ -233,51 +218,5 @@ header {
       
       border-radius: 40px 40px 0 0;
     }
-  
   }
 }
-
-// .beer-page {
-//   width: 100%;
-//   height: 100vh;
-//   align-items: center;
-//   background:rgb(255, 249, 159);
-//   padding-top: 5%;
-//   text-align: center;
-
-//   .weather-container {
-//     display: flex;
-//     font-family: 'Roboto Mono', monospace;
-    
-//     .fa-sun {
-//       margin-right: 1.5%;
-//     }
-//   }
-   
-//   .beer-name, 
-//   .brewery {
-//     font-size: 4rem;
-//     text-transform: uppercase;
-//     font-family: 'Londrina Solid', cursive;
-//   }
-
-//   .brewery {
-//     font-family: 'Londrina Outline', cursive;
-//     font-size: 2.5rem;
-//     margin-top: 5%;
-//   }
-
-//   .beer-results {
-//     display: flex;
-//     flex-direction: column;
-  
-//     .image-container {
-//       width: 40%;
-//       height: auto;
-//         img {
-//           width: 100%;
-//           border-radius: 10px;
-//         }
-//     }
-//   }
-// }

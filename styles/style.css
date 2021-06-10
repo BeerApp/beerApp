@@ -391,6 +391,8 @@ header form:focus > input[type=text], header form:hover > input[type=text] {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  background: -webkit-gradient(linear, left top, left bottom, from(white), color-stop(78%, whitesmoke), color-stop(89%, #cccccc), color-stop(99%, white), to(white));
+  background: linear-gradient(180deg, white 0%, whitesmoke 78%, #cccccc 89%, white 99%, white 100%);
 }
 .beer-page .weather-container {
   display: -webkit-box;
@@ -403,17 +405,6 @@ header form:focus > input[type=text], header form:hover > input[type=text] {
 }
 .beer-page .side-panel {
   z-index: 1;
-  width: 25%;
-  background: white;
-  background: -webkit-gradient(linear, left top, left bottom, from(white), color-stop(78%, whitesmoke), color-stop(89%, #cccccc), color-stop(99%, white), to(white));
-  background: linear-gradient(180deg, white 0%, whitesmoke 78%, #cccccc 89%, white 99%, white 100%);
-}
-.beer-page .side-panel .change-background {
-  height: 100%;
-  padding: 20px;
-  border-radius: 0 0 200px 0;
-  -webkit-box-shadow: 10px 0 20px -10px lightgray;
-          box-shadow: 10px 0 20px -10px lightgray;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -421,6 +412,12 @@ header form:focus > input[type=text], header form:hover > input[type=text] {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  width: 25%;
+  height: 100%;
+  padding: 20px;
+  border-radius: 0 0 200px 0;
+  -webkit-box-shadow: 10px 0 20px -10px lightgray;
+          box-shadow: 10px 0 20px -10px lightgray;
 }
 .beer-page .side-panel .beer-details {
   display: -webkit-box;
@@ -441,11 +438,11 @@ header form:focus > input[type=text], header form:hover > input[type=text] {
   height: 30%;
 }
 .beer-page .side-panel .beer-details div {
-  width: auto;
   padding: 10px;
 }
 .beer-page .side-panel .beer-details div:nth-child(1) {
   border-bottom: 2px solid black;
+  padding-bottom: 12px;
 }
 .beer-page .side-panel .beer-details P {
   font-family: "Roboto Mono", monospace;
@@ -455,8 +452,6 @@ header form:focus > input[type=text], header form:hover > input[type=text] {
   -webkit-box-ordinal-group: 4;
       -ms-flex-order: 3;
           order: 3;
-}
-.beer-page .side-panel.right-panel .change-background {
   border-radius: 0 0 0 200px;
   -webkit-box-shadow: -10px 0 20px -10px lightgray;
           box-shadow: -10px 0 20px -10px lightgray;
@@ -466,9 +461,6 @@ header form:focus > input[type=text], header form:hover > input[type=text] {
       -ms-flex-order: 2;
           order: 2;
   width: 50%;
-  height: 100%;
-}
-.beer-page .results {
   height: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -480,9 +472,6 @@ header form:focus > input[type=text], header form:hover > input[type=text] {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  background: white;
-  background: -webkit-gradient(linear, left top, left bottom, from(white), color-stop(78%, whitesmoke), color-stop(89%, #cccccc), color-stop(99%, white), to(white));
-  background: linear-gradient(180deg, white 0%, whitesmoke 78%, #cccccc 89%, white 99%, white 100%);
 }
 .beer-page .results-title {
   -webkit-box-flex: 1;
