@@ -560,7 +560,7 @@ beerApp.displayInfo = function(beerSuggestion, currentTemp) {
     beerImage.src = `${beerSuggestion.img}`
 
     const beerAbv = document.querySelector('.abv')
-    beerAbv.innerText = `${beerSuggestion.abv}`
+    beerAbv.innerText = `${beerSuggestion.abv}% abv`
 }
 
 beerApp.chooseBeer = (categoryChoice) => {
