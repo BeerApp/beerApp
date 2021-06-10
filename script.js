@@ -446,13 +446,14 @@ beerApp.key = 'e0554359d10b3fda0aa7048818773d46';
 beerApp.init = function () {
     beerApp.allBeer = beerApp.getBeer();
     beerApp.getSubmit();
+    beerApp.getTheWeather("toronto");
 }
 
 beerApp.getSubmit = function() {
     document.querySelector('form').addEventListener('submit', function(event){
         event.preventDefault();
         getCity = document.querySelector('input[type="text"]').value;
-        beerApp.getTheWeather(getCity);
+        beerApp.getTheWeather("getCity");
 
         // console.log(event);
         console.log(beerApp.getCity);
@@ -520,7 +521,7 @@ beerApp.sortWeather = function (currentWeather) {
     beerApp.displayInfo(beerSelection, CurrentTemp);
 
     console.log(beerSelection);
-    console.log(beerSelection.parent);
+    console.log(beerSelection.parent.brewery);
 }
 
 beerApp.displayInfo = function(beerSuggestion, currentTemp) {
@@ -533,11 +534,21 @@ beerApp.displayInfo = function(beerSuggestion, currentTemp) {
     newP.innerText = `${currentWeather.name}: ${currentTemp} ${currentWeather.weather[0].description}`
     weatherDiv.appendChild(newP);
 
-    const brewery = document.querySelector('.brewery')
-    brewery.innerText = `${beerSuggestion.parent}`
+    const breweries = document.querySelectorAll('.brewery');
+    breweries.forEach(brewery => {
+        brewery.innerText = `${beerSuggestion.parent.brewery}`
+    });
 
-    const beerName = document.querySelector('.beer-name')
-    beerName.innerText = `"${beerSuggestion.name}"`
+    const beerNames = document.querySelectorAll('.beer-name');
+    beerNames.forEach(beerName => {
+        beerName.innerText = `${beerSuggestion.name}`
+    });
+
+    // const brewery = document.querySelector('.brewery')
+    // brewery.innerText = `${beerSuggestion.parent.brewery}`
+
+    // const beerName = document.querySelector('.beer-name')
+    // beerName.innerText = `"${beerSuggestion.name}"`
 
     const beerDescription = document.querySelector('.beer-description')
     beerDescription.innerText = `${beerSuggestion.description}`
@@ -550,13 +561,6 @@ beerApp.displayInfo = function(beerSuggestion, currentTemp) {
 
     const beerAbv = document.querySelector('.abv')
     beerAbv.innerText = `${beerSuggestion.abv}`
-    
-
-
-
-
-
-
 }
 
 beerApp.chooseBeer = (categoryChoice) => {
@@ -584,7 +588,7 @@ beerApp.getBeer = function () {
         for (let j = 0; j < brewery.beerList.length; j++) {
             const beerType = brewery.beerList[j];
 
-            beerType.parent = brewery.brewery;
+            beerType.parent = brewery;
             beerSuggestions.push(beerType);
         }
     }
@@ -609,7 +613,7 @@ beerApp.init();
 //             const beerType = brewery.beerList[j];
 
 //             if (beerType.category === beerSelection) {
-//                 beerType.parent = brewery.brewery;
+//                 beerType.parent = brewery;
 //                 beerSuggestions.push(beerType);
 //             }
 //         }
