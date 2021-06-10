@@ -260,7 +260,7 @@ beerApp.breweryLibrary = [
         location: '242 Coxwell Ave, Toronto, ON M4L 3B2',
         beerList: [
             {
-                name: 'Polotmavý Ležák 11°',
+                name: 'Polotmavý Lezák 11°',
                 type: 'Czech Amber Lager',
                 category: 'Lager',
                 abv: 4.4,
@@ -527,7 +527,6 @@ beerApp.displayInfo = function(beerSuggestion, currentTemp) {
     currentWeather = beerApp.currentWeather;
     console.log(currentWeather);
     console.log(beerSuggestion);
-    // this code is taking the .weather-container div, appending a child p tag to it, with inner text that displays the user's input and weather results 
     const weatherDiv = document.querySelector('.weather-container')
     const newP = document.createElement('p')
     newP.innerText = `${currentWeather.name}: ${currentTemp} ${currentWeather.weather[0].description}`
@@ -550,13 +549,6 @@ beerApp.displayInfo = function(beerSuggestion, currentTemp) {
 
     const beerAbv = document.querySelector('.abv')
     beerAbv.innerText = `${beerSuggestion.abv}`
-    
-
-
-
-
-
-
 }
 
 beerApp.chooseBeer = (categoryChoice) => {
@@ -630,3 +622,19 @@ beerApp.init();
 //example: comparing Sour category to Pilsner category is a 1:1 ratio. But looking at each category, Sour has many beer inside of it, compared to Pilsers few beer.
 //For summer category, it shouldnt be 1:1 Sour/Pilsner, it would be a better result to randomly select between all sour and all pilsner beer. 
 //This would make the results more often sours in the summer time
+
+// find a good map API 
+// make a parameter for the zip code which would be the users input 
+// 
+
+// static map api endpoint:
+// http://maps.google.com/staticmap
+
+// api key
+// pk.eyJ1IjoicHBvaXJpM3IiLCJhIjoiY2twcmI5OHZ1MDBhaTJ2bzRyaXZpcHR2NSJ9.6jw-WV9fJqqwnXLLQELNdg
+
+// left field
+// lat:
+// 43.673800
+// long:
+// -79.330520
