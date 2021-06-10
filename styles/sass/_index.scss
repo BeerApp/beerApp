@@ -1,29 +1,68 @@
+$background-gradient: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(245,245,245,1) 78%, rgba(204,204,204,1) 89%, rgba(255,255,255,1) 99%, rgba(255,255,255,1) 100%);
+$accent-color: rgb(255, 249, 159);
+
+$font-1-solid: 'Londrina Solid', cursive;
+$font-1-outline: 'Londrina Outline', cursive;
+
+h1,
+h2,
+h3 {
+  text-transform: uppercase;
+  font-family: $font-1-outline;
+  line-height: 0.8;
+  font-size: 4.5rem;
+  text-align: center;
+  margin: 0;
+}
+
+h1 {
+  text-shadow: 1px 1px black;
+  span {
+    display: block;
+    font-size: 6.5rem;
+    font-family: $font-1-solid;
+    text-shadow: 5px 5px rgb(255, 246, 125);
+  }
+}
+
+h2 {
+  font-size: 2.5rem;
+  
+  &.beer-name {
+    font-size: 3.5rem;
+    font-family: $font-1-solid;
+  }
+
+  &.brewery {
+    text-shadow: 0.3px 0.3px black;
+    margin: 10px 0 0 0;
+  }
+}
+
+h3 {
+  padding: 75px 0;
+  font-family: 'Roboto Mono', monospace;
+  font-size: 2rem;
+  line-height: 1;
+}
+
+header,
+main {
+  height: 100vh;
+  max-height: 1600px;
+}
+
 header {
   background-image: url("../assets/RAIN\ OR\ SHINE\ BEER\ IS\ FINE-1.png");
-  height: 100vh;
   background-size: cover;
-  .landing {
-    height: 100vh;
+
+  .landing-page {
+    height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
   }
-  .title {
-    text-align: center;
-    line-height: 0.8;
-  }
-  h1 {
-    font-size: 4.5rem;
-    text-transform: uppercase;
-    font-family: 'Londrina Outline', cursive;
-    text-shadow: 1px 1px black;
-    span {
-      display: block;
-      font-size: 6.5rem;
-      font-family: 'Londrina Solid', cursive;
-      text-shadow: 5px 5px rgb(255, 246, 125);
-    }
-  }
+  
   .landing-text {
     text-align: center;
     font-size: 1.5rem;
@@ -32,71 +71,213 @@ header {
     line-height: 1.2;
     text-transform: uppercase;
   }
+  
   form {
     display: flex;
     flex-direction: column;
     justify-content: center;
     text-align: center;
+  
     label {
       font-family: 'Roboto Mono', monospace;
       text-transform: uppercase;
       font-weight: bold;
-
     }
+
     input[type=text] {
       margin-top: 1.5%;
+      padding: 2px;
       width: 30%;
       align-self: center;
       background: transparent;
       border: none;
+      border-bottom: 1.5px solid black;
       text-align: center;
       text-transform: uppercase;
       font-family: 'Roboto Mono', monospace;
       font-weight: bold;
       font-size: 1.5rem;
-      border-bottom: 1.5px solid black;
-      // i think we need to add hover to this as well for accessbility (???) 
+
       &:focus {
-        // keep the outline but change the color 
-        outline: none;
+        outline: 2px solid $accent-color;
+        border-bottom: 1.5px solid transparent;
       }
+    }
+    
+    &:focus > input[type=text],
+    &:hover > input[type=text] {
+      outline: 2px solid $accent-color;
+      border-bottom: 1.5px solid transparent;
     }
   }
 }
 
-.beer {
-  align-items: center;
-  background:rgb(255, 249, 159);
-  padding-top: 5%;
-  text-align: center;
-    .weather-container {
-      display: flex;
-      font-family: 'Roboto Mono', monospace;
-        .fa-sun {
-          margin-right: 1.5%;
-        }
+.change-background {
+  background: $accent-color;
+}
+
+.beer-page {
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+
+  .weather-container {
+    display: flex;
+    font-family: 'Roboto Mono', monospace;
+    
+    .fa-sun {
+      margin-right: 1.5%;
     }
-    .beer-name, 
-    .brewery {
-      font-size: 4rem;
-      text-transform: uppercase;
-      font-family: 'Londrina Solid', cursive;
-    }
-    .brewery {
-      font-family: 'Londrina Outline', cursive;
-      font-size: 2.5rem;
-      margin-top: 5%;
-    }
-    .beer-results {
+  }
+
+  .side-panel {
+    z-index: 1;
+
+    width: 25%;
+
+    background: white;
+    background: $background-gradient;
+
+    .change-background {
+      height: 100%;
+      padding: 20px;
+      border-radius: 0 0 200px 0;
+
+      box-shadow: 10px 0 20px -10px lightgray;
+
       display: flex;
       flex-direction: column;
-        .image-container {
-          width: 40%;
-          height: auto;
-            img {
-              width: 100%;
-              border-radius: 10px;
-            }
-        }
     }
+
+    .beer-details {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      width: 100%;
+      height: 30%;
+
+      div {
+        width: auto;
+        // margin-top: 30px;
+        padding: 10px;
+      }
+      
+      div:nth-child(1) {
+        border-bottom: 2px solid black;
+      }
+
+      P {
+        
+        font-family: 'Roboto Mono', monospace;
+        font-size: 1.5rem;
+      }
+    }
+
+    &.right-panel {
+      order: 3;
+
+      .change-background {
+        border-radius: 0 0 0 200px;
+        box-shadow: -10px 0 20px -10px lightgray;
+      }
+    }
+  }
+
+  .beer-results {
+    order:2;
+    
+    width: 50%;
+    height: 100%;
+  }
+  
+  .results {
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    background: rgb(255,255,255);
+    background: $background-gradient;
+  }
+
+  .results-title {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .image-container {
+    max-height: 80%;
+    height: auto;
+    width: auto;
+    padding: 0 40px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    
+    img {
+      display: block;
+      object-fit: contain;
+      margin: 0 auto;
+      
+      width: auto;
+      height: auto;
+      max-width: 100%;
+      max-height: 100%;
+      
+      border-radius: 40px 40px 0 0;
+    }
+  
+  }
 }
+
+// .beer-page {
+//   width: 100%;
+//   height: 100vh;
+//   align-items: center;
+//   background:rgb(255, 249, 159);
+//   padding-top: 5%;
+//   text-align: center;
+
+//   .weather-container {
+//     display: flex;
+//     font-family: 'Roboto Mono', monospace;
+    
+//     .fa-sun {
+//       margin-right: 1.5%;
+//     }
+//   }
+   
+//   .beer-name, 
+//   .brewery {
+//     font-size: 4rem;
+//     text-transform: uppercase;
+//     font-family: 'Londrina Solid', cursive;
+//   }
+
+//   .brewery {
+//     font-family: 'Londrina Outline', cursive;
+//     font-size: 2.5rem;
+//     margin-top: 5%;
+//   }
+
+//   .beer-results {
+//     display: flex;
+//     flex-direction: column;
+  
+//     .image-container {
+//       width: 40%;
+//       height: auto;
+//         img {
+//           width: 100%;
+//           border-radius: 10px;
+//         }
+//     }
+//   }
+// }
