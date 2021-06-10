@@ -1,24 +1,26 @@
 $background-gradient: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(245,245,245,1) 78%, rgba(204,204,204,1) 89%, rgba(255,255,255,1) 99%, rgba(255,255,255,1) 100%);
-$my-box-shadow: 0 0 20px lightgray;
 $accent-color: rgb(255, 249, 159);
+
+$font-1-solid: 'Londrina Solid', cursive;
+$font-1-outline: 'Londrina Outline', cursive;
 
 h1,
 h2,
 h3 {
   text-transform: uppercase;
-  font-family: 'Londrina Outline', cursive;
-  text-align: center;
+  font-family: $font-1-outline;
   line-height: 0.8;
+  font-size: 4.5rem;
+  text-align: center;
   margin: 0;
 }
 
 h1 {
-  font-size: 4.5rem;
   text-shadow: 1px 1px black;
   span {
     display: block;
     font-size: 6.5rem;
-    font-family: 'Londrina Solid', cursive;
+    font-family: $font-1-solid;
     text-shadow: 5px 5px rgb(255, 246, 125);
   }
 }
@@ -26,14 +28,14 @@ h1 {
 h2 {
   font-size: 2.5rem;
   
+  &.beer-name {
+    font-size: 3.5rem;
+    font-family: $font-1-solid;
+  }
+
   &.brewery {
     text-shadow: 0.3px 0.3px black;
     margin: 10px 0 0 0;
-  }
-  
-  &.beer-name {
-    font-size: 3.5rem;
-    font-family: 'Londrina Solid', cursive;
   }
 }
 
@@ -44,13 +46,18 @@ h3 {
   line-height: 1;
 }
 
+header,
+main {
+  height: 100vh;
+  max-height: 1600px;
+}
+
 header {
   background-image: url("../assets/RAIN\ OR\ SHINE\ BEER\ IS\ FINE-1.png");
-  height: 100vh;
   background-size: cover;
 
   .landing-page {
-    height: 100vh;
+    height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
@@ -90,7 +97,6 @@ header {
       font-family: 'Roboto Mono', monospace;
       font-weight: bold;
       font-size: 1.5rem;
-      // i think we need to add hover to this as well for accessbility (???) 
 
       &:focus {
         outline: 2px solid $accent-color;
@@ -100,7 +106,6 @@ header {
     
     &:focus > input[type=text],
     &:hover > input[type=text] {
-      // keep the outline but change the color 
       outline: 2px solid $accent-color;
       border-bottom: 1.5px solid transparent;
     }
@@ -113,9 +118,7 @@ header {
 
 .beer-page {
   width: 100%;
-  height: 100vh;
-  // padding-top: 5%;
-  // text-align: center;
+  height: 100%;
 
   display: flex;
 
@@ -141,7 +144,7 @@ header {
       padding: 20px;
       border-radius: 0 0 200px 0;
 
-      box-shadow: $my-box-shadow;
+      box-shadow: 10px 0 20px -10px lightgray;
 
       display: flex;
       flex-direction: column;
@@ -164,8 +167,6 @@ header {
       
       div:nth-child(1) {
         border-bottom: 2px solid black;
-        // text-align: right;
-        // padding: 10px 30px 0 0;
       }
 
       P {
@@ -180,6 +181,7 @@ header {
 
       .change-background {
         border-radius: 0 0 0 200px;
+        box-shadow: -10px 0 20px -10px lightgray;
       }
     }
   }
@@ -200,8 +202,6 @@ header {
 
     background: rgb(255,255,255);
     background: $background-gradient;
-
-    // border-radius: 60px 60px 0 0;
   }
 
   .results-title {
