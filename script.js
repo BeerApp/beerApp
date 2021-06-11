@@ -445,18 +445,19 @@ beerApp.key = 'e0554359d10b3fda0aa7048818773d46';
 
 beerApp.init = function () {
     beerApp.allBeer = beerApp.getBeer();
-    beerApp.getSubmit();
-    beerApp.getTheWeather("toronto");
+    beerApp.resultsPage = document.querySelector('main');
+    beerApp.getUserInput();
+    // beerApp.getTheWeather("toronto");
 }
 
-beerApp.getSubmit = function() {
+beerApp.getUserInput = function() {
     document.querySelector('form').addEventListener('submit', function(event){
         event.preventDefault();
         getCity = document.querySelector('input[type="text"]').value;
-        beerApp.getTheWeather("getCity");
+        beerApp.getTheWeather(getCity);
 
         // console.log(event);
-        console.log(beerApp.getCity);
+        console.log(getCity);
     })
 }
 
@@ -484,36 +485,38 @@ beerApp.sortWeather = function (currentWeather) {
 
     const CurrentTemp = Math.floor(currentWeather.main.temp - 273.15);
     console.log(CurrentTemp);
-    const beerList = ["Pilsner", "Lager"];
+
+    const beerTypeList = ["Pilsner", "Lager"];
+    const beerList = [];
 
     if (CurrentTemp < 5) {
-        beerList.push("Stout", "Porter", "IIPA", "Black Lager", "Amber Lager")
+        beerTypeList.push("Stout", "Porter", "IIPA", "Black Lager", "Amber Lager")
 
         //any beer >6% excluding sours
 
     } else if (CurrentTemp > 5) {
 
         if (CurrentTemp < 15) {
-            beerList.push("wheat", "Saison", "IIPA", "APA");
+            beerTypeList.push("wheat", "Saison", "IIPA", "APA");
 
             //Strong IPA
         }
     }
     if (CurrentTemp > 10) {
-        beerList.push("Sour");
+        beerTypeList.push("Sour");
         //Lighter IPAs
 
         if (CurrentTemp > 15) {
-            beerList.push("Cider");
+            beerTypeList.push("Cider");
 
             //Hard Seltzers
         }
     }
 
-    console.log(beerList);
+    console.log(beerTypeList);
 
-    const randomCategory = Math.floor(Math.random() * beerList.length);
-    const beerCategory = beerList[randomCategory];
+    const randomCategory = Math.floor(Math.random() * beerTypeList.length);
+    const beerCategory = beerTypeList[randomCategory];
 
     console.log(beerCategory);
     
@@ -522,44 +525,6 @@ beerApp.sortWeather = function (currentWeather) {
 
     console.log(beerSelection);
     console.log(beerSelection.parent.brewery);
-}
-
-beerApp.displayInfo = function(beerSuggestion, currentTemp) {
-    currentWeather = beerApp.currentWeather;
-    console.log(currentWeather);
-    console.log(beerSuggestion);
-    const weatherDiv = document.querySelector('.weather-container')
-    const newP = document.createElement('p')
-    newP.innerText = `${currentWeather.name}: ${currentTemp} ${currentWeather.weather[0].description}`
-    weatherDiv.appendChild(newP);
-
-    const breweries = document.querySelectorAll('.brewery');
-    breweries.forEach(brewery => {
-        brewery.innerText = `${beerSuggestion.parent.brewery}`
-    });
-
-    const beerNames = document.querySelectorAll('.beer-name');
-    beerNames.forEach(beerName => {
-        beerName.innerText = `${beerSuggestion.name}`
-    });
-
-    // const brewery = document.querySelector('.brewery')
-    // brewery.innerText = `${beerSuggestion.parent.brewery}`
-
-    // const beerName = document.querySelector('.beer-name')
-    // beerName.innerText = `"${beerSuggestion.name}"`
-
-    const beerDescription = document.querySelector('.beer-description')
-    beerDescription.innerText = `${beerSuggestion.description}`
-
-    const beerType = document.querySelector('.beer-type')
-    beerType.innerText = `${beerSuggestion.type}`
-
-    const beerImage = document.querySelector('.beer-image')
-    beerImage.src = `${beerSuggestion.img}`
-
-    const beerAbv = document.querySelector('.abv')
-    beerAbv.innerText = `${beerSuggestion.abv}% abv`
 }
 
 beerApp.chooseBeer = (categoryChoice) => {
@@ -577,9 +542,46 @@ beerApp.chooseBeer = (categoryChoice) => {
     // console.log(beerSuggestion.parent);
 }
 
+beerApp.displayInfo = function(beerSuggestion, currentTemp) {
+    const weatherDiv = document.querySelector('.weather-container');
+    const newP = document.createElement('p');
+    newP.innerText = `${beerApp.currentWeather.name}: ${currentTemp} ${beerApp.currentWeather.weather[0].description}`
+    weatherDiv.appendChild(newP);
+
+    const breweries = document.querySelectorAll('.brewery');
+    breweries.forEach(brewery => {
+        brewery.innerText = `${beerSuggestion.parent.brewery}`
+    });
+
+    const beerNames = document.querySelectorAll('.beer-name');
+    beerNames.forEach(beerName => {
+        beerName.innerText = `${beerSuggestion.name}`
+    });
+
+    const beerDescription = document.querySelector('.beer-description')
+    beerDescription.innerText = `${beerSuggestion.description}`
+
+    const beerType = document.querySelector('.beer-type')
+    beerType.innerText = `${beerSuggestion.type}`
+
+    const beerImage = document.querySelector('.beer-image')
+    beerImage.src = `${beerSuggestion.img}`
+
+    const beerAbv = document.querySelector('.abv')
+    beerAbv.innerText = `${beerSuggestion.abv}% abv`
+
+    
+    //Changed this to allow for multiple brewery and beer-name class items
+
+    // const brewery = document.querySelector('.brewery')
+    // brewery.innerText = `${beerSuggestion.parent.brewery}`
+
+    // const beerName = document.querySelector('.beer-name')
+    // beerName.innerText = `"${beerSuggestion.name}"`
+}
 
 beerApp.getBeer = function () {
-    const beerSuggestions = [];
+    const allBeer = [];
 
     for (let i = 0; i < beerApp.breweryLibrary.length; i++) {
         const brewery = beerApp.breweryLibrary[i];
@@ -588,11 +590,11 @@ beerApp.getBeer = function () {
             const beerType = brewery.beerList[j];
 
             beerType.parent = brewery;
-            beerSuggestions.push(beerType);
+            allBeer.push(beerType);
         }
     }
 
-    return beerSuggestions;
+    return allBeer;
 }
 
 beerApp.init();
