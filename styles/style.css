@@ -288,6 +288,9 @@ h1 span {
   font-family: "Londrina Solid", cursive;
   text-shadow: 5px 5px #fff67d;
 }
+h1 .mobile-beer {
+  display: inline;
+}
 
 h2 {
   font-size: 2.5rem;
@@ -302,9 +305,9 @@ h2.brewery {
 }
 
 h3 {
-  padding: 75px 0;
+  padding: 20px 0;
   font-family: "Roboto Mono", monospace;
-  font-size: 2rem;
+  font-size: calc(0.8rem + 1.8vw);
   line-height: 1;
 }
 
@@ -399,6 +402,10 @@ header form:focus > input[type=text], header form:hover > input[type=text] {
   display: -ms-flexbox;
   display: flex;
   font-family: "Roboto Mono", monospace;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 30px 0;
 }
 .beer-page .weather-container .fa-sun {
   margin-right: 1.5%;
@@ -415,6 +422,7 @@ header form:focus > input[type=text], header form:hover > input[type=text] {
   width: 25%;
   height: 100%;
   padding: 20px;
+  padding-top: 75px;
   border-radius: 0 0 200px 0;
   -webkit-box-shadow: 10px 0 20px -10px lightgray;
           box-shadow: 10px 0 20px -10px lightgray;
@@ -444,17 +452,56 @@ header form:focus > input[type=text], header form:hover > input[type=text] {
   border-bottom: 2px solid black;
   padding-bottom: 12px;
 }
-.beer-page .side-panel .beer-details P {
+.beer-page .side-panel .beer-details p {
   font-family: "Roboto Mono", monospace;
   font-size: 1.5rem;
+}
+.beer-page .side-panel .beer-details p.beer-description {
+  font-family: "Roboto Mono", monospace;
+}
+.beer-page .side-panel .beer-details p.abv {
+  padding: 0 0 20px 0;
+}
+.beer-page .side-panel.left-panel .text-container {
+  height: 80%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 .beer-page .side-panel.right-panel {
   -webkit-box-ordinal-group: 4;
       -ms-flex-order: 3;
           order: 3;
+  padding-top: 75px;
   border-radius: 0 0 0 200px;
   -webkit-box-shadow: -10px 0 20px -10px lightgray;
           box-shadow: -10px 0 20px -10px lightgray;
+}
+.beer-page .side-panel.right-panel .brewery-description {
+  font-family: "Roboto Mono", monospace;
+  font-size: 0.9rem;
+}
+.beer-page p.beer-description {
+  font-family: "Roboto Mono", monospace;
+}
+.beer-page button.beer-info {
+  font-family: "Roboto Mono", monospace;
+  font-weight: bold;
+  cursor: pointer;
+  text-transform: uppercase;
+  border: 1.5px solid #fceb02;
+  background: #fceb02;
+  padding: 10px 20px;
+}
+.beer-page button.beer-info:hover {
+  border: 1.5px solid black;
 }
 .beer-page .beer-results {
   -webkit-box-ordinal-group: 3;
@@ -472,6 +519,7 @@ header form:focus > input[type=text], header form:hover > input[type=text] {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  position: relative;
 }
 .beer-page .results-title {
   -webkit-box-flex: 1;
@@ -514,4 +562,97 @@ header form:focus > input[type=text], header form:hover > input[type=text] {
   max-width: 100%;
   max-height: 100%;
   border-radius: 40px 40px 0 0;
+}
+
+.location {
+  background: transparent;
+  border: none;
+  font-family: "Roboto Mono", monospace;
+  cursor: pointer;
+}
+.location:hover {
+  letter-spacing: 0.5px;
+}
+
+.modal-overlay {
+  height: 100vh;
+  width: 100vw;
+  background: #fceb02;
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  display: none;
+}
+
+.modal-container {
+  display: none;
+  position: fixed;
+  left: 50%;
+  margin-left: -450px;
+  top: 50%;
+  margin-top: -325px;
+}
+
+#mapid {
+  width: 900px;
+  height: 650px;
+  border-radius: 30px;
+}
+
+.beer-info-text {
+  font-family: "Roboto Mono", monospace;
+  font-size: 1rem;
+}
+
+@media (max-width: 800px) {
+  h1 {
+    font-size: 4rem;
+  }
+  h1 span {
+    font-size: 5.5rem;
+  }
+
+  header form input[type=text] {
+    width: 50%;
+  }
+}
+@media (max-width: 680px) {
+  h1 {
+    font-size: 3rem;
+  }
+  h1 span {
+    font-size: 4.5rem;
+  }
+
+  header .landing-text {
+    font-size: 1.35rem;
+  }
+}
+@media (max-width: 563px) {
+  h1 span {
+    font-size: 4rem;
+  }
+}
+@media (max-width: 502px) {
+  h1 {
+    font-size: 2.5rem;
+  }
+  h1 span {
+    font-size: 4.5rem;
+  }
+  h1 span .mobile-beer {
+    display: block;
+    font-size: 6.5rem;
+  }
+
+  header .landing-text {
+    font-size: 1rem;
+  }
+}
+@media (max-width: 358px) {
+  h1 {
+    font-size: 2.15rem;
+  }
 }
