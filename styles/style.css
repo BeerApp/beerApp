@@ -307,7 +307,7 @@ h2.brewery {
 h3 {
   padding: 20px 0;
   font-family: "Roboto Mono", monospace;
-  font-size: 2rem;
+  font-size: calc(0.8rem + 1.8vw);
   line-height: 1;
 }
 
@@ -456,13 +456,25 @@ header form:focus > input[type=text], header form:hover > input[type=text] {
 .beer-page .side-panel .beer-details p {
   font-family: "Roboto Mono", monospace;
   font-size: 1.5rem;
-  padding-top: 35px;
 }
 .beer-page .side-panel .beer-details p.beer-description {
   font-family: "Roboto Mono", monospace;
 }
 .beer-page .side-panel .beer-details p.abv {
   padding: 0 0 20px 0;
+}
+.beer-page .side-panel.left-panel .text-container {
+  height: 80%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 .beer-page .side-panel.right-panel {
   -webkit-box-ordinal-group: 4;
