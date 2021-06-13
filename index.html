@@ -12,6 +12,12 @@
     <link href="https://fonts.googleapis.com/css2?family=Londrina+Outline&family=Londrina+Solid&display=swap"
         rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+    integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+    crossorigin="" />
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+    integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+    crossorigin=""></script>
     <script src="https://kit.fontawesome.com/9200c11f6d.js" crossorigin="anonymous"></script>
 </head>
 
@@ -20,7 +26,7 @@
     <header>
         <div class="landing-page wrapper">
             <div>
-                <h1>Rain or Shine<span>Beer is Fine</span></h1>
+                <h1>Rain or Shine<span><span class="mobile-beer">Beer</span> is Fine</span></h1>
             </div>
             <p class="landing-text">Check the weather in your city and we'll suggest a craft beer best enjoyed in
                 the sun, rain, or snow.</p>
@@ -39,6 +45,9 @@
         <div class="beer-page wrapper-two">
             <section class="beer-results">
                 <div class="results-title">
+                    <div class="weather-container">
+                        <p></p>
+                    </div>
                     <h2 class="beer-name"></h2>
                     <h2 class="brewery"></h2>
                 </div>
@@ -49,20 +58,17 @@
 
             <section class="side-panel left-panel change-background">
                 <!-- <div class="change-background"> -->
-                    <div class="weather-container">
-                        <p></p>
-                    </div>
                     <div>
                         <h3 class="beer-name"></h3>
+                        <div class="beer-details">
+                            <div>
+                                <p class="beer-type"></p>
+                            </div>
+                            <div>
+                                <p class="abv"></p>
+                            </div>
+                        </div>
                         <p class="beer-description"></p>
-                    </div>
-                    <div class="beer-details">
-                        <div>
-                            <p class="beer-type"></p>
-                        </div>
-                        <div>
-                            <p class="abv"></p>
-                        </div>
                     </div>
                 <!-- </div> -->
             </section>
@@ -70,16 +76,26 @@
             <section class="side-panel right-panel change-background">
                 <!-- <div class="change-background"> -->
                     <h3 class="brewery"></h3>
-                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Error porro asperiores dolores ea unde,
+                    <!-- <p class="brewery-description">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Error porro asperiores dolores ea unde,
                         fugiat consectetur magnam vitae libero incidunt reprehenderit et quasi aspernatur temporibus
                         eligendi voluptatum modi totam nostrum esse, odit deleniti debitis assumenda? Libero obcaecati
                         accusantium ea, nobis, culpa architecto et, nam dignissimos rerum enim molestiae minus
-                        exercitationem.</p>
-                <!-- </div> -->
+                        exercitationem.</p> -->
+
+                    <!-- ask about the semantics of a button -->
+                    <button class="location"></button>
+                    <div class="modal-overlay"></div>
+                    <div class="modal-container" id="modal">
+                        <div id="mapid"></div>
+                    </div>
+
+
+                </div>
             </section>
         </div>
     </main>
 
+    
     <script src="./script.js"></script>
 </body>
 

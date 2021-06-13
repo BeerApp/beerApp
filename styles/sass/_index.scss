@@ -24,6 +24,9 @@ h1 {
     font-family: $font-1-solid;
     text-shadow: 5px 5px rgb(255, 246, 125);
   }
+  .mobile-beer {
+    display: inline;
+  }
 }
 
 h2 {
@@ -41,7 +44,7 @@ h2 {
 }
 
 h3 {
-  padding: 75px 0;
+  padding: 20px 0;
   font-family: $font-2;
   font-size: 2rem;
   line-height: 1;
@@ -115,6 +118,7 @@ header {
 
 .change-background {
   background: $accent-color;
+  // position: relative;
 }
 
 .beer-page {
@@ -128,7 +132,9 @@ header {
   .weather-container {
     display: flex;
     font-family: $font-2;
-    
+    justify-content: center;
+    padding: 30px 0;
+
     .fa-sun {
       margin-right: 1.5%;
     }
@@ -143,6 +149,7 @@ header {
     width: 25%;
     height: 100%;
     padding: 20px;
+    padding-top: 75px;
     border-radius: 0 0 200px 0;
     box-shadow: 10px 0 20px -10px lightgray;
 
@@ -164,19 +171,52 @@ header {
         padding-bottom: 12px;
       }
 
-      P {
+      p {
         font-family: $font-2;
         font-size: 1.5rem;
+        padding-top: 35px;
       }
+
+      p.beer-description {
+        font-family: $font-2;
+      }
+
+      p.abv {
+        padding: 0 0 20px 0;
+      }
+
     }
 
     &.right-panel {
       order: 3;
+      padding-top: 75px;
 
       border-radius: 0 0 0 200px;
       box-shadow: -10px 0 20px -10px lightgray;
+        .brewery-description {
+          font-family: $font-2;
+          font-size: 0.9rem;
+        }
     }
   }
+
+  p.beer-description {
+  font-family: $font-2;
+}
+
+button.beer-info {
+  font-family: $font-2;
+  font-weight: bold;
+  cursor: pointer;
+  text-transform: uppercase;
+  border: 1.5px solid rgb(252, 235, 2);
+  background:rgb(252, 235, 2);
+  // trbl
+  padding: 10px 20px;
+  &:hover {
+    border: 1.5px solid black;
+  }
+}
 
   .beer-results {
     order:2;
@@ -187,6 +227,8 @@ header {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+
+    position: relative;
   }
 
   .results-title {
@@ -219,4 +261,49 @@ header {
       border-radius: 40px 40px 0 0;
     }
   }
+}
+
+.location {
+  background: transparent; 
+  border: none;
+  font-family: $font-2;
+  cursor: pointer;
+  &:hover {
+    letter-spacing: 0.5px;
+  }
+}
+
+.modal-overlay {
+  height: 100vh;
+  width: 100vw;
+  background:rgb(252, 235, 2);
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  display: none;
+}
+
+.modal-container {
+  display: none;
+  position: fixed;
+  left: 50%;
+  margin-left: -450px;
+  top: 50%;
+  margin-top: -325px;
+  // width: 500px;
+  // height: 350px;
+}
+
+
+#mapid {
+  width: 900px;
+  height: 650px;
+  border-radius: 30px;
+}
+
+.beer-info-text {
+  font-family: $font-2;
+  font-size: 1rem;
 }
