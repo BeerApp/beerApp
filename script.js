@@ -54,7 +54,7 @@ beerApp.breweryLibrary = [
                 size: 473,
                 price: 4.50,
                 img: "https://cdn.shopify.com/s/files/1/0364/1705/products/boneshaker_glass_x530@2x.png?v=1614613183",
-                description: "Brewed with copious amounts of hops balanced with over 4 different malts, unfiltered and naturally carbonated. The result? A truly unique taste experience and an award winning IPA! Expect fresh grapefruit & pine aromas followed by massive hop flavours!"
+                description: "Copious amounts of hops balanced with over 4 different malts, unfiltered and naturally carbonated. A truly unique taste experience and an award winning IPA! Expect fresh grapefruit & pine aromas followed by massive hop flavours!"
             }
         ]
     },
@@ -73,7 +73,7 @@ beerApp.breweryLibrary = [
                 size: 473,
                 price: 3.50,
                 img: "https://www.theciderhouse.ca/sites/g/files/yrakuj166/files/products/2020-05/img-prod-batch.png",
-                description: `Introducing Batch: 1904: Our first-born. Named to remember the Great Toronto Fire of the same year, and to celebrate a city standing tall for over 100 year since; the embodiment of "true north, strong and free." Batch: 1904 delivers a dry, tart cider with a refreshing full apple finish. Each can is proudly crafted with at least 7 fresh-pressed Ontario apples.`
+                description: `Batch: 1904 delivers a dry, tart cider with a refreshing full apple finish. Each can is proudly crafted with at least 7 fresh-pressed Ontario apples.`
             }
         ]
     },
@@ -86,7 +86,7 @@ beerApp.breweryLibrary = [
         beerList: [
             {
                 name: 'Sea Barrel 23',
-                type: 'Riesling, Chardonnay & Sea BuckThorn',
+                type: 'Riesling, Chardonnay & Sea Buckthorn',
                 category: 'Sour',
                 abv: 6.3,
                 size: 375,
@@ -94,7 +94,7 @@ beerApp.breweryLibrary = [
                 img:
                     'https://cdn.shopify.com/s/files/1/0006/4598/8407/products/SEABARREL23333-web_750x.jpg?v=1614279807',
                 description:
-                    'Beer aged on both freshly pressed 2019 Chardonnay and Riesling skins from Pearl Morissette then barrel aged in oak for 1 year. Aged again in stainless with Sea Buckthorns for one month and bottle conditioned for 1 year. Tastes like Sea Buckthorn (surprise!) aka little popping orange bursts of sunshine',
+                    'Aged in stainless steel barrels with Sea Buckthorns for one month and bottle conditioned for 1 year. Tastes like Sea Buckthorn (surprise!) aka little popping orange bursts of sunshine',
             },
             {
                 name: 'Pilsner',
@@ -182,7 +182,7 @@ beerApp.breweryLibrary = [
                 size: 500,
                 price: 12.39,
                 img: "https://cdn.shopify.com/s/files/1/0072/8449/0309/products/Farmageddon_Batch15copy_460x.jpg?v=1595521561",
-                description: "Farmageddon is our wild farmhouse ale that we've been brewing, blending, and aging for almost as many years as we've been open. The blending process allows us to maintain a common thread across batches, the aging adds nuanced layers, while the brett and bacteria work hard to create small idiosyncrasies in each release.  It's a refined, effervescent, and delicious beer worthy of special occasions and idle weeknights."
+                description: "A wild farmhouse ale that we've been brewing, blending, and aging for almost as many years as we've been open. A refined, effervescent, and delicious beer worthy of special occasions and idle weeknights."
             },
         ]
     },
@@ -236,7 +236,7 @@ beerApp.breweryLibrary = [
                 price: 3.99,
                 img: 'https://pbs.twimg.com/media/EMFHNYWWkAA4hSu.jpg',
                 description:
-                    'To create this tasty mocha-inspired treat, we developed a sweet stout recipe and added lactose, roasted & crushed cocoa nibs and coffee beans during conditioning. The result is a rich and decadent blend of chocolate, caramel and vanilla topped off with a toasty, sweet and creamy marshmallow.',
+                    'A tasty mocha-inspired treat. We developed a sweet stout recipe and added lactose, roasted & crushed cocoa nibs and coffee beans during conditioning. The result is a rich and decadent blend of chocolate, caramel and vanilla topped off with a toasty, sweet and creamy marshmallow.',
             },
             {
                 name: 'Lo Viste',
@@ -248,7 +248,7 @@ beerApp.breweryLibrary = [
                 img:
                     'https://cododesign.com/wp-content/uploads/2019/07/LeftField07-1200x1200.png',
                 description:
-                    'Inspired by the tasty Cuban cocktail and named for the on-base celebration popularized by many Latin American players, Lo Viste Mojito Sour is a tart, quenching ale packed with lime juice and zest with a crisp hint of spearmint. Celebrate victory with this satisfying spring sipper! Contains wheat.',
+                    'Lo Viste Mojito Sour is a tart, quenching ale packed with lime juice and zest with a crisp hint of spearmint. Celebrate victory with this satisfying spring sipper! Contains wheat.',
             },
             {
                 name: "O'Neill",
@@ -260,7 +260,7 @@ beerApp.breweryLibrary = [
                 img:
                     'https://www.canadianbeernews.com/wp-content/uploads/2021/03/leftfield_oneillstout.jpg',
                 description:
-                    'Made with 100% Canadian ingredients, O’Neill stout is a tribute to ‘Canada’s Babe Ruth’ and the first ever winner of the Triple Crown. A base of Barn Owl (Ontario) Pale Ale malt provides a lightly toasted malt background, while Red Shed (Alberta) Roasted Barley provides flavours of rich chocolate and freshly brewed coffee while remaining light and refreshing with a balanced bitterness.',
+                    'Made with 100% Canadian ingredients. A base of Barn Owl (Ontario) Pale Ale malt provides a lightly toasted malt background, while Red Shed (Alberta) Roasted Barley provides flavours of rich chocolate and freshly brewed coffee while remaining light and refreshing with a balanced bitterness.',
             },
             {
                 name: 'Bricks + Mortar',
@@ -272,7 +272,7 @@ beerApp.breweryLibrary = [
                 img:
                     'https://www.leftfieldbrewery.ca/wp-content/uploads/2015/10/BricksMortar_web.jpg',
                 description:
-                    'Bricks and Mortar is our tribute to the brick industry upon which our neighbourhood was built along with our own evolution to becoming a physical brewery. Pilot’s ‘Community’ Seasonal Blend of Guatemalan and Columbian beans were added in the final stages of conditioning imparting notes of ripe plum, dark honey and milk chocolate expressing the unique conditions of its origin.',
+                    'Pilot’s ‘Community’ Seasonal Blend of Guatemalan and Columbian beans were added in the final stages of conditioning imparting notes of ripe plum, dark honey and milk chocolate expressing the unique conditions of its origin.',
             },
         ]
     },
@@ -293,7 +293,7 @@ beerApp.breweryLibrary = [
                 img:
                     'https://cdn.shopify.com/s/files/1/2133/7549/products/image_9a76f662-f233-43b0-8a3f-3b2f5ab726dd.jpg?v=1610381502',
                 description:
-                    'A beautifully balanced, clean, and malt-rich amber lager with notes of toasted bread loaf crust, caramel, peppery spice, and distant granola. Backstopped by a generous carbonation and firm bitterness, this represents the next step in our unbounded obsession with Czech brewing tradition.',
+                    'A balanced, clean, and malt-rich amber lager with notes of toasted bread loaf crust, caramel, peppery spice, and distant granola. A generous carbonation and firm bitterness.',
             },
             {
                 name: 'Yuzu',
@@ -306,7 +306,7 @@ beerApp.breweryLibrary = [
                 img:
                     'https://d2j6dbq0eux0bg.cloudfront.net/images/28682722/1661620674.jpg',
                 description:
-                    'Yuzu combines Japanese citrus and Belgian yeast, with restrained hopping to create a light, lively beer accentuated by mild tartness and minerality. Yuzu is a tremendously aromatic fruit: you’ll smell the beer being poured from across the room. The combination of fruit and saison characteristics creates a dramatic nose of freshly-peeled clementines, all pith and bright orange. The acidity helps smooth and hone the minerality that gives the simple beer complexity, and allows for a crisp but memorable finish.',
+                    'Yuzu combines Japanese citrus and Belgian yeast. Restrained hopping to create a light, lively beer accentuated by mild tartness and minerality. The combination of fruit and saison characteristics creates a dramatic nose of freshly-peeled clementines, all pith and bright orange.',
             },
         ]
     },
@@ -339,7 +339,7 @@ beerApp.breweryLibrary = [
                 img:
                     'https://images.squarespace-cdn.com/content/v1/5f69440bd09be264b24e25bd/1610483637388-1DZ7W7K2G5PR983HSY90/ke17ZwdGBToddI8pDm48kLIj3bb_uLOihttx7hjsPSV7gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z4YTzHvnKhyp6Da-NYroOW3ZGjoBKy3azqku80C789l0lqfkVpRp1g_2L-WsTQRP4IUeQvxhQLxDj0GQzUQT21mzi2feheXFTkax-QWHoTYtA/CoffeeCakeMB.jpg?format=1500w',
                 description:
-                    'Brewed with an abundance of chocolate, coffee and caramel malts, with a hint of lactose sugar to add a silky texture. Conditioned on many pounds of fresh roasted coffee beans, as well as cinnamon sticks and vanilla beans. Notes of fresh brewed coffee, deep cinnamon, rich chocolate, vanilla, toffee, and dark fruits, with an extremely smooth texture, with balanced sweetness.',
+                    'Notes of fresh brewed coffee, deep cinnamon, rich chocolate, vanilla, toffee, and dark fruits, with an extremely smooth texture, with balanced sweetness.',
             },
         ]
     },
@@ -360,7 +360,7 @@ beerApp.breweryLibrary = [
                 img:
                     'https://cdn.shopify.com/s/files/1/0564/5605/2889/products/sticky-paws-lightbox-photo_1024x1024@2x.png?v=1621632795',
                 description:
-                    'Aromas of mild roast, coffee and maple brought to you in a very easy drinking package. Oat brings subtle nutty flavours and viscosity to the roasty impression and the maple remains intertwined with the malt derived flavours poking its head up every so often to make its presence known. Brewed with Ontario sourced amber maple syrup and made to be refreshing and easy going.',
+                    'Aromas of mild roast, coffee and maple brought to you in a very easy drinking package. Brewed with Ontario sourced amber maple syrup and made to be refreshing and easy going.',
             },
             {
                 name: 'Sitting Pretty',
@@ -406,7 +406,7 @@ beerApp.breweryLibrary = [
                 img:
                     'https://www.lcbo.com/content/dam/lcbo/products/020663.jpg/jcr:content/renditions/cq5dam.web.1280.1280.jpeg',
                 description:
-                    "You get hint of tartness with every swirl of the glass. The Amarillo hop provides a wonderful orange and zested lime component alongside some floral characteristics. Bright and light. The fine touch of the brewers' sour-blend is makes TANGO a well-rounded, zesty/tangy, thirst quenching, sessionable, tart wheat ale. The finish is nice and dry leading to frequent imbibing.",
+                    "Amarillo hops provide a wonderful orange and zested lime component alongside some floral characteristics. Bright and light. The fine touch of the brewers' sour-blend makes TANGO a well-rounded, zesty/tangy, thirst quenching, sessionable, tart wheat ale.",
             },
             {
                 name: "Canuck",
@@ -416,7 +416,7 @@ beerApp.breweryLibrary = [
                 size: 473,
                 price: 2.90,
                 img: "https://www.greatlakesbeer.com/glb/wp-content/uploads/2014/11/Canuck-Pale-Ale-Poster-2020-663x1024.jpg",
-                description: "The minute you crack your can, aroma of grapefruit, mango and pine hit you in the face; like a beaver slapping his tail on a pristine small body of water in Ontario. Canuck pours a deep gold, bordering on burnt orange that produces a tight snowy white toque. Take one last nose before getting into the liquid, which you’ll soon find will be hard to put down. Soft carbonation leads into a sweet honeyish start before it gives way to more grapefruit, tropical citrus, canned peaches and pine. Light to medium body with a very dry finish. Drink at your local pub, in the fish hut, campground, the beach, in a canoe (responsibly), playing shinny, on a log…actually, anywhere north of the 49th."
+                description: "The minute you crack your can, aroma of grapefruit, mango and pine hit you in the face. Soft carbonation leads into a sweet honeyish start before it gives way to more grapefruit, tropical citrus, canned peaches and pine. Light to medium body with a very dry finish."
             },
             {
                 name: "Shinny Pants",
@@ -426,7 +426,7 @@ beerApp.breweryLibrary = [
                 size: 473,
                 price: 3,
                 img: "https://www.greatlakesbeer.com/glb/wp-content/uploads/2019/02/Shinny-Pants-Poster-2018-663x1024.jpg",
-                description: "Aromas of chocolate and lightly roasted coffee beans, light to medium body with notes of bitter chocolate, roasted malt and espresso, this 4.3% Session Stout is a perfect companion to outdoor shinny rinks and perfect for post game bevvies."
+                description: "Aromas of chocolate and lightly roasted coffee beans, light to medium body with notes of bitter chocolate, roasted malt and espresso."
             }
         ]
     },
