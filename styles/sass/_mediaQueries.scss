@@ -1,0 +1,61 @@
+@media (max-width: 800px) {
+  h1 {
+    font-size: 4rem;
+    span {
+      font-size: 5.5rem;
+    }
+  }
+  header {
+    form {
+      input[type=text] {
+        width: 50%;
+      }
+    }
+  }
+}
+
+@media (max-width: 680px) {
+  h1 {
+    font-size: 3rem;
+    span {
+      font-size: 4.5rem;
+    }
+  }
+  header {
+    .landing-text {
+      font-size: 1.35rem;
+    }
+  }
+}
+
+@media (max-width: 563px) {
+  h1 {
+    span {
+      font-size: 4rem;
+    }
+  }
+}
+
+@media (max-width: 502px) {
+  h1 {
+    font-size: 2.5rem;
+    span {
+      font-size: 4.5rem;
+      .mobile-beer {
+        display: block;
+        font-size: 6.5rem;
+      }
+    }
+  }
+  header {
+    .landing-text {
+      font-size: 1rem;
+    }
+  }
+}
+
+@media (max-width: 358px) {
+  h1 {
+    font-size: 2.15rem;
+  }
+}

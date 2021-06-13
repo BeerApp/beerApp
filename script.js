@@ -31,7 +31,10 @@ const beerApp = {};
 beerApp.breweryLibrary = [
     {
         brewery: "Amsterdam Brewery",
-        location: "245 Queens Quay W, Toronto, ON M5J 2K9",
+        location: "245 Queens Quay W, Toronto, ON",
+        post: "M5J 2K9",
+        long: -79.356870,
+        lat: 43.706700,
         beerList: [
             {
                 name: "Space Invader",
@@ -51,13 +54,16 @@ beerApp.breweryLibrary = [
                 size: 473,
                 price: 4.50,
                 img: "https://cdn.shopify.com/s/files/1/0364/1705/products/boneshaker_glass_x530@2x.png?v=1614613183",
-                description: "Boneshaker is brewed with copious amounts of hops balanced with over 4 different malts, unfiltered and naturally carbonated. The result? A truly unique taste experience and an award winning IPA! Expect fresh grapefruit & pine aromas followed by massive hop flavours!"
+                description: "Brewed with copious amounts of hops balanced with over 4 different malts, unfiltered and naturally carbonated. The result? A truly unique taste experience and an award winning IPA! Expect fresh grapefruit & pine aromas followed by massive hop flavours!"
             }
         ]
     },
     {
         brewery: "Brickworks Cider House",
-        location: "709 Queen St E, Toronto, ON M4M 1H1",
+        location: "709 Queen St E, Toronto, ON",
+        post: 'M4M 1H1',
+        long: -79.349600,
+        lat: 43.658730,
         beerList: [
             {
                 name: "Batch: 1904",
@@ -73,7 +79,10 @@ beerApp.breweryLibrary = [
     },
     {
         brewery: 'Burdock Brewery',
-        location: '1184 Bloor St W, Toronto, ON M6H 1N2',
+        location: '1184 Bloor St W, Toronto, ON',
+        post: 'M6H 1N2',
+        long: -79.437820,
+        lat: 43.659580,
         beerList: [
             {
                 name: 'Sea Barrel 23',
@@ -103,7 +112,10 @@ beerApp.breweryLibrary = [
     },
     {
         brewery: 'Blood Brothers',
-        location: '165 Geary Ave, Toronto, ON, M6H 2B8',
+        location: '165 Geary Ave, Toronto, ON',
+        post: 'M6H 2B8',
+        long: -79.436220,
+        lat: 43.669850,
         beerList: [
             {
                 name: 'Paradise Lost - Guava',
@@ -121,7 +133,10 @@ beerApp.breweryLibrary = [
     },
     {
         brewery: 'Bellwoods Brewery',
-        location: '124 Ossington Ave, Toronto, ON M6J 2Z5',
+        location: '124 Ossington Ave, Toronto, ON',
+        post: 'M6J 2Z5',
+        long: -79.420097,
+        lat: 43.647079,
         beerList: [
             {
                 name: 'Roman Candle',
@@ -173,7 +188,10 @@ beerApp.breweryLibrary = [
     },
     {
         brewery: 'Karbon Brewing',
-        location: '150 Symes Rd, Toronto, ON M6N 0B1',
+        location: '150 Symes Rd, Toronto, ON',
+        post: 'M6N 0B1',
+        lat: 43.67374,
+        long: -79.47898,
         beerList: [
             {
                 name: 'One World',
@@ -203,7 +221,10 @@ beerApp.breweryLibrary = [
     },
     {
         brewery: 'Left Field Brewery',
-        location: '36 Wagstaff Dr, Toronto, ON M4L 3W9',
+        location: '36 Wagstaff Dr, Toronto, ON',
+        post: 'M4L 3W9',
+        lat: 43.67365,
+        long: -79.33042,
         beerList: [
             {
                 name: 'Sweet Spot',
@@ -257,7 +278,10 @@ beerApp.breweryLibrary = [
     },
     {
         brewery: 'Godspeed Brewery',
-        location: '242 Coxwell Ave, Toronto, ON M4L 3B2',
+        location: '242 Coxwell Ave, Toronto, ON',
+        post: 'M4L 3B2',
+        long: -79.3191,
+        lat: 43.67251,
         beerList: [
             {
                 name: 'Polotmavý Lezák 11°',
@@ -288,7 +312,10 @@ beerApp.breweryLibrary = [
     },
     {
         brewery: 'Rorschach Brewing Co.',
-        location: '1001 Eastern Ave, Toronto, ON M4L 1A8',
+        location: '1001 Eastern Ave, Toronto, ON',
+        post: 'M4L 1A8',
+        long: -79.31997,
+        lat: 43.66371,
         beerList: [
             {
                 name: 'Truth Serum',
@@ -318,7 +345,10 @@ beerApp.breweryLibrary = [
     },
     {
         brewery: 'Black Lab Brewing',
-        location: '818 Eastern Ave, Toronto, ON M4L 1A1',
+        location: '818 Eastern Ave, Toronto, ON',
+        post: 'M4L 1A1',
+        long: -79.32896,
+        lat: 43.66165,
         beerList: [
             {
                 name: 'Sticky Paws',
@@ -348,7 +378,10 @@ beerApp.breweryLibrary = [
     },
     {
         brewery: 'Great Lakes Brewery',
-        location: '30 Queen Elizabeth Blvd, Etobicoke, ON M8Z 1L8',
+        location: '30 Queen Elizabeth Blvd, Etobicoke, ON',
+        post: 'M8Z 1L8',
+        long: -79.50476,
+        lat: 43.62253,
         beerList: [
             {
                 name: 'Octopus Wants To Fight',
@@ -399,7 +432,10 @@ beerApp.breweryLibrary = [
     },
     {
         brewery: 'Indie Ale House',
-        location: '2876 Dundas St W, Toronto, ON M6P 1Y8',
+        location: '2876 Dundas St W, Toronto, ON',
+        post: 'M6P 1Y8',
+        long: -79.53835,
+        lat: 43.63809,
         beerList: [
             {
                 name: 'Zombie Apocalypse',
@@ -445,18 +481,19 @@ beerApp.key = 'e0554359d10b3fda0aa7048818773d46';
 
 beerApp.init = function () {
     beerApp.allBeer = beerApp.getBeer();
-    beerApp.getSubmit();
-    beerApp.getTheWeather("toronto");
+    beerApp.resultsPage = document.querySelector('main');
+    beerApp.getUserInput();
+    // beerApp.getTheWeather("toronto");
 }
 
-beerApp.getSubmit = function() {
+beerApp.getUserInput = function() {
     document.querySelector('form').addEventListener('submit', function(event){
         event.preventDefault();
         getCity = document.querySelector('input[type="text"]').value;
-        beerApp.getTheWeather("getCity");
+        beerApp.getTheWeather(getCity);
 
         // console.log(event);
-        console.log(beerApp.getCity);
+        console.log(getCity);
     })
 }
 
@@ -484,36 +521,38 @@ beerApp.sortWeather = function (currentWeather) {
 
     const CurrentTemp = Math.floor(currentWeather.main.temp - 273.15);
     console.log(CurrentTemp);
-    const beerList = ["Pilsner", "Lager"];
+
+    const beerTypeList = ["Pilsner", "Lager"];
+    const beerList = [];
 
     if (CurrentTemp < 5) {
-        beerList.push("Stout", "Porter", "IIPA", "Black Lager", "Amber Lager")
+        beerTypeList.push("Stout", "Porter", "IIPA", "Black Lager", "Amber Lager")
 
         //any beer >6% excluding sours
 
     } else if (CurrentTemp > 5) {
 
         if (CurrentTemp < 15) {
-            beerList.push("wheat", "Saison", "IIPA", "APA");
+            beerTypeList.push("wheat", "Saison", "IIPA", "APA");
 
             //Strong IPA
         }
     }
     if (CurrentTemp > 10) {
-        beerList.push("Sour");
+        beerTypeList.push("Sour");
         //Lighter IPAs
 
         if (CurrentTemp > 15) {
-            beerList.push("Cider");
+            beerTypeList.push("Cider");
 
             //Hard Seltzers
         }
     }
 
-    console.log(beerList);
+    console.log(beerTypeList);
 
-    const randomCategory = Math.floor(Math.random() * beerList.length);
-    const beerCategory = beerList[randomCategory];
+    const randomCategory = Math.floor(Math.random() * beerTypeList.length);
+    const beerCategory = beerTypeList[randomCategory];
 
     console.log(beerCategory);
     
@@ -522,44 +561,6 @@ beerApp.sortWeather = function (currentWeather) {
 
     console.log(beerSelection);
     console.log(beerSelection.parent.brewery);
-}
-
-beerApp.displayInfo = function(beerSuggestion, currentTemp) {
-    currentWeather = beerApp.currentWeather;
-    console.log(currentWeather);
-    console.log(beerSuggestion);
-    const weatherDiv = document.querySelector('.weather-container')
-    const newP = document.createElement('p')
-    newP.innerText = `${currentWeather.name}: ${currentTemp} ${currentWeather.weather[0].description}`
-    weatherDiv.appendChild(newP);
-
-    const breweries = document.querySelectorAll('.brewery');
-    breweries.forEach(brewery => {
-        brewery.innerText = `${beerSuggestion.parent.brewery}`
-    });
-
-    const beerNames = document.querySelectorAll('.beer-name');
-    beerNames.forEach(beerName => {
-        beerName.innerText = `${beerSuggestion.name}`
-    });
-
-    // const brewery = document.querySelector('.brewery')
-    // brewery.innerText = `${beerSuggestion.parent.brewery}`
-
-    // const beerName = document.querySelector('.beer-name')
-    // beerName.innerText = `"${beerSuggestion.name}"`
-
-    const beerDescription = document.querySelector('.beer-description')
-    beerDescription.innerText = `${beerSuggestion.description}`
-
-    const beerType = document.querySelector('.beer-type')
-    beerType.innerText = `${beerSuggestion.type}`
-
-    const beerImage = document.querySelector('.beer-image')
-    beerImage.src = `${beerSuggestion.img}`
-
-    const beerAbv = document.querySelector('.abv')
-    beerAbv.innerText = `${beerSuggestion.abv}% abv`
 }
 
 beerApp.chooseBeer = (categoryChoice) => {
@@ -577,9 +578,117 @@ beerApp.chooseBeer = (categoryChoice) => {
     // console.log(beerSuggestion.parent);
 }
 
+beerApp.displayInfo = function(beerSuggestion, currentTemp) {
+    const weatherDiv = document.querySelector('.weather-container');
+    const newP = document.createElement('p');
+    newP.innerText = `${beerApp.currentWeather.name} ${currentTemp}° ${beerApp.currentWeather.weather[0].description}`
+    weatherDiv.appendChild(newP);
+
+    const breweries = document.querySelectorAll('.brewery');
+    breweries.forEach(brewery => {
+        brewery.innerText = `${beerSuggestion.parent.brewery}`
+    });
+
+    const beerNames = document.querySelectorAll('.beer-name');
+    beerNames.forEach(beerName => {
+        beerName.innerText = `${beerSuggestion.name}`
+    });
+
+    const beerDescription = document.querySelector('.beer-description')
+    beerDescription.innerText = `${beerSuggestion.description}`
+
+    const beerType = document.querySelector('.beer-type')
+    beerType.innerText = `${beerSuggestion.type}`
+
+    const beerImage = document.querySelector('.beer-image')
+    beerImage.src = `${beerSuggestion.img}`
+
+    const beerAbv = document.querySelector('.abv')
+    beerAbv.innerText = `${beerSuggestion.abv}% abv`
+
+    // const beerButton = document.querySelector('.beer-info')
+    // beerButton.addEventListener('click', function() {
+    //     beerApp.displayBeerInfo();
+    // })
+
+    const breweryAddress = document.querySelector('.location')
+    breweryAddress.innerText = `${beerSuggestion.parent.location}`
+    breweryAddress.addEventListener('click', function() {
+        beerApp.displayMap();
+    });
+}
+
+beerApp.displayMap = function() {
+    const modalContainer = document.querySelector('.modal-container')
+    modalContainer.style.display = 'block';
+    const modalOverlay = document.querySelector('.modal-overlay');
+    modalOverlay.style.display = 'block';
+
+    let mymap = new L.Map(
+        "mapid",
+        {
+            center: new L.LatLng(
+                43.673800, -79.330520
+                ),
+                zoom: 14,
+                layers: new L.TileLayer("https://api.maptiler.com/maps/basic/256/{z}/{x}/{y}.png?key=YR3vNPdVXM0k8f2oqpUn")
+            }
+            );
+            var marker = L.marker([43.673800, -79.330520]).addTo(mymap);
+            marker.bindPopup("<b>Left Field Brewery</b>").openPopup();
+
+    modalOverlay.addEventListener('click', function(event) {
+        modalContainer.style.display = 'none';
+        modalOverlay.style.display = 'none';
+    })
+
+    // document.addEventListener('click', function(event) {
+    //     // console.log(event.target);
+    //     if (event.target === document.getElementById('mapid')) {
+    //         return
+    //     } else {
+    //         console.log('clicked!');
+
+    //     }
+    // })       
+}
+
+
+// beerApp.hideMap = function() {
+//     const body = document.querySelector('body')
+//     const modalContainer = document.querySelector('.modal-container')
+
+//     body.addEventListener('click', function() {
+//         if (modalContainer.style.display = 'block') {
+//             modalContainer.style.display = 'none';
+//         }
+//     })
+
+// }
+
+
+
+
+
+
+    // TO DO!!!
+    // add lat/long to breweries in brewery library 
+    // add brewery description to the brewery library which will display on submit (its lorem right now)
+    // tweaks to css 
+    // media queries
+
+    
+    
+    //Changed this to allow for multiple brewery and beer-name class items
+
+    // const brewery = document.querySelector('.brewery')
+    // brewery.innerText = `${beerSuggestion.parent.brewery}`
+
+    // const beerName = document.querySelector('.beer-name')
+    // beerName.innerText = `"${beerSuggestion.name}"`
 
 beerApp.getBeer = function () {
-    const beerSuggestions = [];
+    const allBeer = [];
 
     for (let i = 0; i < beerApp.breweryLibrary.length; i++) {
         const brewery = beerApp.breweryLibrary[i];
@@ -588,14 +697,22 @@ beerApp.getBeer = function () {
             const beerType = brewery.beerList[j];
 
             beerType.parent = brewery;
-            beerSuggestions.push(beerType);
+            allBeer.push(beerType);
         }
     }
 
-    return beerSuggestions;
+    return allBeer;
 }
 
 beerApp.init();
+
+
+
+
+
+
+
+
 
 //OLD WAY OF RETURNING BEER CHOICE FROM CATEGORY
 //Replaced with "beerApp.allBeer" in init();
@@ -637,15 +754,3 @@ beerApp.init();
 // find a good map API 
 // make a parameter for the zip code which would be the users input 
 // 
-
-// static map api endpoint:
-// http://maps.google.com/staticmap
-
-// api key
-// pk.eyJ1IjoicHBvaXJpM3IiLCJhIjoiY2twcmI5OHZ1MDBhaTJ2bzRyaXZpcHR2NSJ9.6jw-WV9fJqqwnXLLQELNdg
-
-// left field
-// lat:
-// 43.673800
-// long:
-// -79.330520
