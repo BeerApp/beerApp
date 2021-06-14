@@ -14,7 +14,6 @@ h3 {
   font-size: 4.5rem;
   text-align: center;
   margin: 0;
-  // visibility:visible;
 }
 
 h1 {
@@ -32,7 +31,6 @@ h1 {
 
 h2 {
   font-size: 2.5rem;
-  // font-family: $font-2;
   
   &.beer-name {
     font-size: 3rem;
@@ -61,7 +59,6 @@ main {
 }
 
 main {
-  // display: none;
   visibility: hidden;
   height: 0;
   overflow: hidden;
@@ -116,7 +113,6 @@ header {
     }
 
     input[type=text] {
-      // margin-top: 1.5%;
       padding: 2px;
       width: 30%;
       align-self: center;
@@ -262,7 +258,6 @@ header {
   order:2;
   
   width: 50%;
-  // height: 100%;
   margin-top: 50px;
 
   display: flex;
@@ -330,14 +325,13 @@ header {
 
   width: 100vw;
   height: calc(100px*100vh);
-  // padding: 120px;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
 
-#mapid {
+.map {
   padding: 70px;
 
   height: calc(0.833 * 100vw - 160.06px);
