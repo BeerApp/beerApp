@@ -28,6 +28,8 @@
 
 const beerApp = {};
 
+// console.log(beerApp.breweryLibrary[0].beerList[0].name);
+
 beerApp.breweryLibrary = [
     {
         brewery: "Amsterdam Brewery",
@@ -295,6 +297,18 @@ beerApp.breweryLibrary = [
                 description:
                     'Guatemalan and Columbian beans added in the final stages of conditioning, imparting notes of ripe plum, dark honey and milk chocolate.',
             },
+            {
+                name: '7th Inning Seltzer',
+                type: 'Hard Seltzer',
+                category: 'Hard Seltzer',
+                abv: 5,
+                size: 355,
+                price: 2.3,
+                img:
+                    'https://cdn.shopify.com/s/files/1/2397/3329/products/7IS_BlueRazz_can_31e79058-a945-42b5-bae6-1d147f62381a_480x480.jpg?v=1621260247',
+                description:
+                    'These crystal clear, fizzy hard seltzers are naturally fermented with no added sugar and all natural fruit flavours.',
+            },
         ]
     },
     {
@@ -515,12 +529,32 @@ beerApp.breweryLibrary = [
 beerApp.url = 'https://api.openweathermap.org/data/2.5/weather';
 beerApp.key = 'e0554359d10b3fda0aa7048818773d46';
 
+beerApp.getBeer = function () {
+    const allBeer = [];
+
+    for (let i = 0; i < beerApp.breweryLibrary.length; i++) {
+        const brewery = beerApp.breweryLibrary[i];
+
+        for (let j = 0; j < brewery.beerList.length; j++) {
+            const beerType = brewery.beerList[j];
+
+            beerType.parent = brewery;
+            allBeer.push(beerType);
+        }
+    }
+
+    return allBeer;
+}
+
 beerApp.init = function () {
     beerApp.allBeer = beerApp.getBeer();
+    console.log(beerApp.breweryLibrary);
+    console.log(beerApp.allBeer);
     beerApp.resultsPage = document.querySelector('main');
     beerApp.getUserInput();
-    beerApp.getTheWeather("toronto");
     beerApp.createMap();
+
+    // beerApp.getTheWeather("toronto");
 }
 
 beerApp.getUserInput = function () {
@@ -529,8 +563,7 @@ beerApp.getUserInput = function () {
         getCity = document.querySelector('input[type="text"]').value;
         beerApp.getTheWeather(getCity);
 
-        // console.log(event);
-        console.log(getCity);
+        beerApp.userErrorMessage = document.querySelector('.error-message');
     })
 }
 
@@ -543,6 +576,12 @@ beerApp.getTheWeather = function (location) {
     })
     fetch(weatherApiUrl)
         .then(function (weatherData) {
+            console.log(weatherData);
+            if (!weatherData.ok) {
+                console.log("I threw an error!")
+                throw new error("city not found");
+            }
+
             return weatherData.json();
         })
         .then(function (weatherDataJson) {
@@ -551,6 +590,16 @@ beerApp.getTheWeather = function (location) {
             beerApp.currentWeather = weatherDataJson;
 
             beerApp.sortWeather(weatherDataJson);
+
+            beerApp.userErrorMessage.style.visibility = "hidden";
+
+            main = document.querySelector('main');
+            main.classList.add("visible");
+            main.scrollIntoView();
+        })
+        .catch(function (onError) {
+            console.log(onError);
+            beerApp.userErrorMessage.style.visibility = "visible";
         })
 }
 
@@ -561,53 +610,41 @@ beerApp.sortWeather = function (currentWeather) {
 
     const categoryList = ["Pilsner", "Lager"];
     const beerList = [];
-    const beerTechnicalList = [];
 
     if (CurrentTemp < 5) {
         categoryList.push("Stout", "Porter", "IIPA", "Black Lager", "Amber Lager")
 
-        beerTechnicalList.push(...beerApp.allBeer.filter(beer => {
-            return beer.category != "Sour" && beer.abv >= 7;
-            // return beer.abv >= 6;
+        beerList.push(...beerApp.allBeer.filter(beer => {
+            return beer.category != "Sour" && beer.abv >= 6;
         }))
 
-        // any beer >6% excluding sours
-
-    } else if (CurrentTemp > 5) {
+    } else if (CurrentTemp >= 5) {
 
         if (CurrentTemp < 15) {
             categoryList.push("wheat", "Saison", "IIPA", "APA");
 
-            //Strong IPA
+            beerList.push(...beerApp.allBeer.filter(beer => {
+                return beer.category === "IPA" && beer.abv >= 6;
+            }))
         }
     }
-    if (CurrentTemp > 10) {
+    if (CurrentTemp >= 10) {
         categoryList.push("Sour");
-        //Lighter IPAs
 
-        if (CurrentTemp > 15) {
-            categoryList.push("Cider");
+        beerList.push(...beerApp.allBeer.filter(beer => {
+            return beer.category === "IPA" && beer.abv < 6;
+        }))
 
-            //Hard Seltzers
+        if (CurrentTemp >= 15) {
+            categoryList.push("Cider", "Hard Seltzer");
         }
     }
 
     categoryList.forEach(category => {
         beerList.push(...beerApp.allBeer.filter(beer => {
-            return beer.category === category;
+            return beer.category === category && !beerList.includes(beer);
         }));
     });
-
-    console.log(beerList);
-
-    // const remaining = beerList.filter(beer => {
-    //     if(beerTechnicalList.includes(beer)) {
-    //         console.log(beer);
-    //         return beer;
-    //     }
-    // })
-
-    // beerList.push(...remaining);
 
     console.log(beerList);
     console.log(categoryList);
@@ -615,35 +652,17 @@ beerApp.sortWeather = function (currentWeather) {
     const randomValue = Math.floor(Math.random() * beerList.length);
     const beerSuggestion = beerList[randomValue];
 
-
-    // const randomCategory = Math.floor(Math.random() * categoryList.length);
-    // const beerCategory = categoryList[randomCategory];
-
-    // const beerSuggestion  = beerApp.chooseBeer(beerCategory);
     beerApp.displayInfo(beerSuggestion, CurrentTemp);
 
-    // console.log(categoryList);
-    // console.log(beerCategory);
     console.log(beerSuggestion);
     console.log(beerSuggestion.parent.brewery);
 }
 
-beerApp.chooseBeer = (categoryChoice) => {
-    const beerSuggestions = beerApp.allBeer.filter(beer => {
-        return beer.category === categoryChoice;
-    })
-
-    const randomValue = Math.floor(Math.random() * beerSuggestions.length);
-    const beerSuggestion = beerSuggestions[randomValue];
-
-    return beerSuggestion;
-}
-
 beerApp.displayInfo = function (beerSuggestion, currentTemp) {
-    const weatherDiv = document.querySelector('.weather-container');
-    const newP = document.createElement('p');
-    newP.innerText = `${beerApp.currentWeather.name} ${currentTemp}° ${beerApp.currentWeather.weather[0].description}`
-    weatherDiv.appendChild(newP);
+    const weatherElement = document.querySelector('.weather');
+    console.log(weatherElement);
+    weatherElement.innerText = `${beerApp.currentWeather.name} ${currentTemp}° ${beerApp.currentWeather.weather[0].description}`;
+    // weatherDiv.appendChild(weatherElement);
 
     const breweries = document.querySelectorAll('.brewery');
     breweries.forEach(brewery => {
@@ -655,17 +674,18 @@ beerApp.displayInfo = function (beerSuggestion, currentTemp) {
         beerName.innerText = `${beerSuggestion.name}`
     });
 
-    const beerDescription = document.querySelector('.beer-description')
-    beerDescription.innerText = `${beerSuggestion.description}`
+    const beerDescription = document.querySelector('.beer-description');
+    beerDescription.innerText = `${beerSuggestion.description}`;
 
-    const beerType = document.querySelector('.beer-type')
-    beerType.innerText = `${beerSuggestion.type}`
+    const beerType = document.querySelector('.beer-type');
+    beerType.innerText = `${beerSuggestion.type}`;
 
-    const beerImage = document.querySelector('.beer-image')
-    beerImage.src = `${beerSuggestion.img}`
+    const beerImage = document.querySelector('.beer-image');
+    beerImage.src = `${beerSuggestion.img}`;
+    beerImage.alt = `${beerSuggestion.name} craft beverage from ${beerSuggestion.parent.brewery}.`;
 
-    const beerAbv = document.querySelector('.abv')
-    beerAbv.innerText = `${beerSuggestion.abv}% abv`
+    const beerAbv = document.querySelector('.abv');
+    beerAbv.innerText = `${beerSuggestion.abv}% abv`;
 
     const beerFb = document.querySelector('.facebook')
     beerFb.href = `${beerSuggestion.parent.facebook}`
@@ -677,14 +697,15 @@ beerApp.displayInfo = function (beerSuggestion, currentTemp) {
     beerWebsite.href = `https://${beerSuggestion.parent.website}/`
     beerWebsite.innerText = `${beerSuggestion.parent.website}`
 
-    const breweryAddress = document.querySelector('.location')
-    breweryAddress.innerText = `${beerSuggestion.parent.location}`
-    breweryAddress.addEventListener('click', function () {
+    const breweryAddress = document.querySelector('.location');
+    breweryAddress.innerText = `${beerSuggestion.parent.location}`;
+    breweryAddress.addEventListener('click', function (event) {
+        event.stopPropagation();
         beerApp.displayMap(beerSuggestion);
     });
 }
 
-beerApp.createMap = function() {
+beerApp.createMap = function () {
     beerApp.myMap = new L.Map(
         "mapid",
         {
@@ -696,29 +717,57 @@ beerApp.createMap = function() {
         }
     );
     beerApp.marker = L.marker([43.673800, -79.330520]).addTo(beerApp.myMap);
-    marker.bindPopup("<b>Left Field Brewery</b>").openPopup();
 }
 
 beerApp.displayMap = function (beerSuggestion) {
     const modalContainer = document.querySelector('.modal-container')
-    modalContainer.style.display = 'block';
-    const modalOverlay = document.querySelector('.modal-overlay');
-    modalOverlay.style.display = 'block';
+    // const modalOverlay = document.querySelector('.modal-overlay');
 
     beerApp.myMap.removeLayer(beerApp.marker)
     beerApp.marker = L.marker([beerSuggestion.parent.lat, beerSuggestion.parent.long]).addTo(beerApp.myMap);
+    beerApp.marker.bindPopup(beerSuggestion.parent.brewery).openPopup();
 
-    // let marker = L.marker([43.673800, -79.330520]).addTo(mymap);
-    // marker.bindPopup("<b>Left Field Brewery</b>").openPopup();
+    beerApp.myMap.setView(new L.LatLng(beerSuggestion.parent.lat, beerSuggestion.parent.long));
 
-    modalOverlay.addEventListener('click', function (event) {
-        modalContainer.style.display = 'none';
-        modalOverlay.style.display = 'none';
+    modalContainer.style.visibility = 'visible';
+    // modalContainer.addEventListener('click', function (event) {
+    //     // modalOverlay.style.visibility = 'hidden';
+    // })
+
+    document.querySelector('body').addEventListener('click', function (event) {
+        if (event.target.parentElement != modalContainer) {
+            modalContainer.style.visibility = 'hidden';
+        }
+        console.log(event.target.parentElement);
+        // event.stopPropagation();
+
+        // if (event.target != modalContainer);
     })
 
     // create map 
     // put the map in our init function so it's available on page load 
     // 
+
+
+
+
+
+    // modalOverlay.addEventListener('click', function () {
+    //     modalContainer.style.visibility = 'hidden';
+    //     modalOverlay.style.visibility = 'hidden';
+    // })
+
+    // modalContainer.style.visibility = 'visible';
+    // modalOverlay.style.visibility = 'visible';
+
+    //Create the map
+    //create a marker
+
+
+    //display map
+    //show map
+    //beerApp.myMap.removeLayer(beerApp.marker)
+    //beerApp.marker = L.marker([beerSuggestion.parent.lat, beerSuggestion.parent.long]);
 
 
 
@@ -738,23 +787,6 @@ beerApp.displayMap = function (beerSuggestion) {
 
     // const beerName = document.querySelector('.beer-name')
     // beerName.innerText = `"${beerSuggestion.name}"`
-}
-
-beerApp.getBeer = function () {
-    const allBeer = [];
-
-    for (let i = 0; i < beerApp.breweryLibrary.length; i++) {
-        const brewery = beerApp.breweryLibrary[i];
-
-        for (let j = 0; j < brewery.beerList.length; j++) {
-            const beerType = brewery.beerList[j];
-
-            beerType.parent = brewery;
-            allBeer.push(beerType);
-        }
-    }
-
-    return allBeer;
 }
 
 beerApp.init();

@@ -319,6 +319,18 @@ main {
   max-height: 1600px;
 }
 
+main {
+  visibility: hidden;
+  height: 0;
+  overflow: hidden;
+}
+
+.visible {
+  visibility: visible;
+  height: 100vh;
+  overflow: unset;
+}
+
 header {
   background-image: url("../assets/RAIN OR SHINE BEER IS FINE-1.png");
   background-size: cover;
@@ -362,8 +374,15 @@ header form label {
   text-transform: uppercase;
   font-weight: bold;
 }
+header form .error-message {
+  visibility: hidden;
+  font-family: "Roboto Mono", monospace;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  color: red;
+  margin: 6px;
+}
 header form input[type=text] {
-  margin-top: 1.5%;
   padding: 2px;
   width: 30%;
   -ms-flex-item-align: center;
@@ -371,6 +390,7 @@ header form input[type=text] {
   background: transparent;
   border: none;
   border-bottom: 1.5px solid black;
+  border-radius: 30px 30px 0 0;
   text-align: center;
   text-transform: uppercase;
   font-family: "Roboto Mono", monospace;
@@ -510,12 +530,13 @@ header form:focus > input[type=text], header form:hover > input[type=text] {
 .beer-page p.beer-description {
   font-family: "Roboto Mono", monospace;
 }
-.beer-page .beer-results {
+
+.beer-results {
   -webkit-box-ordinal-group: 3;
       -ms-flex-order: 2;
           order: 2;
   width: 50%;
-  height: 100%;
+  margin-top: 50px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -526,9 +547,20 @@ header form:focus > input[type=text], header form:hover > input[type=text] {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  position: relative;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
-.beer-page .results-title {
+.beer-results .weather-container {
+  text-transform: uppercase;
+  width: 100%;
+  padding: 10px;
+  border-radius: 50px 50px 0 0;
+  -webkit-box-shadow: 0 0 12px -5px #6f6f6f;
+          box-shadow: 0 0 12px -5px #6f6f6f;
+}
+
+.results-title {
   -webkit-box-flex: 1;
       -ms-flex-positive: 1;
           flex-grow: 1;
@@ -543,8 +575,9 @@ header form:focus > input[type=text], header form:hover > input[type=text] {
       -ms-flex-pack: center;
           justify-content: center;
 }
-.beer-page .image-container {
-  max-height: 80%;
+
+.image-container {
+  max-height: 75%;
   height: auto;
   width: auto;
   padding: 0 40px;
@@ -559,7 +592,7 @@ header form:focus > input[type=text], header form:hover > input[type=text] {
       -ms-flex-pack: end;
           justify-content: flex-end;
 }
-.beer-page .image-container img {
+.image-container img {
   display: block;
   -o-object-fit: contain;
      object-fit: contain;
@@ -578,31 +611,38 @@ header form:focus > input[type=text], header form:hover > input[type=text] {
   cursor: pointer;
 }
 
-.modal-overlay {
-  height: 100vh;
-  width: 100vw;
-  background: rgba(252, 235, 2, 0);
-  position: absolute;
-  left: 0;
+.modal-container {
+  visibility: hidden;
+  position: fixed;
   top: 0;
   right: 0;
   bottom: 0;
-  display: none;
-}
-
-.modal-container {
-  display: none;
-  position: fixed;
-  left: 50%;
-  margin-left: -25vw;
-  top: 50%;
-  margin-top: -40vh;
+  left: 0;
+  width: 100vw;
+  height: calc(100px*100vh);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 #mapid {
-  width: 50vw;
-  height: 80vh;
+  padding: 70px;
+  height: calc(0.833 * 100vw - 160.06px);
+  width: 100%;
+  max-height: 70vh;
+  max-width: 70%;
+  margin: 0 auto;
+  min-height: 270px;
+  min-width: 270px;
   border-radius: 30px;
+  -webkit-box-shadow: 0 0 10px #6f6f6f;
+          box-shadow: 0 0 10px #6f6f6f;
 }
 
 .beer-info-text {
@@ -611,8 +651,9 @@ header form:focus > input[type=text], header form:hover > input[type=text] {
 }
 
 @media (max-width: 1030px) {
-  main {
-    height: auto;
+  .change-background,
+.beer-page {
+    background: white;
   }
 
   .beer-page {
@@ -620,15 +661,13 @@ header form:focus > input[type=text], header form:hover > input[type=text] {
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
-    background: white;
     width: 100%;
   }
   .beer-page p.beer-description {
     text-align: center;
   }
   .beer-page .side-panel {
-    width: 70%;
-    background: white;
+    width: 90%;
     border-radius: 0;
     margin: 0 auto;
     padding-top: 20px;
@@ -649,6 +688,13 @@ header form:focus > input[type=text], header form:hover > input[type=text] {
             order: 0;
     width: 100%;
   }
+  .beer-page .weather-container {
+    border-radius: 0;
+    -webkit-box-shadow: none;
+            box-shadow: none;
+    text-align: center;
+    padding: 30px;
+  }
 }
 @media (max-width: 900px) {
   h3 {
@@ -664,7 +710,18 @@ header form:focus > input[type=text], header form:hover > input[type=text] {
   }
 
   header form input[type=text] {
-    width: 50%;
+    width: 70%;
+  }
+
+  .image-container {
+    padding: 0;
+  }
+  .image-container img {
+    border-radius: 0;
+  }
+
+  .beer-page .side-panel .beer-details {
+    margin: 30px 0;
   }
 }
 @media (max-width: 680px) {
