@@ -13,16 +13,15 @@
         rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
-    integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
-    crossorigin="" />
+        integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+        crossorigin="" />
     <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
-    integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
-    crossorigin=""></script>
+        integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+        crossorigin=""></script>
     <script src="https://kit.fontawesome.com/9200c11f6d.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
-    <!-- "landing" section -->
     <header>
         <div class="landing-page wrapper">
             <div>
@@ -31,8 +30,9 @@
             <p class="landing-text">Check the weather in your city and we'll suggest a craft beer best enjoyed in
                 the sun, rain, or snow.</p>
             <div>
-                <form action="#">
+                <form action="#beer-results">
                     <label for="search">your city:</label>
+                    <p class="error-message">City not found</p>
                     <input type="text" id="search" autofocus>
                     <input type="submit" class="sr-only">
                 </form>
@@ -40,60 +40,58 @@
         </div>
     </header>
 
-    <main class="change-background">
+    <main id="beer-results" class="change-background">
         <!-- where BEER results are displayed -->
         <div class="beer-page wrapper-two">
             <section class="beer-results">
                 <div class="results-title">
-                    <div class="weather-container">
-                        <p></p>
-                    </div>
                     <h2 class="beer-name"></h2>
                     <h2 class="brewery"></h2>
                 </div>
                 <div class="image-container">
                     <img class="beer-image" src="" alt="">
                 </div>
+                <div class="weather-container change-background">
+                    <p class="weather"></p>
+                </div>
             </section>
 
             <section class="side-panel left-panel change-background">
-                    <div class="text-container">
-                        <h3 class="beer-name"></h3>
-                        <div class="beer-details">
-                            <div>
-                                <p class="beer-type"></p>
-                            </div>
-                            <div>
-                                <p class="abv"></p>
-                            </div>
+                <div class="text-container">
+                    <h3 class="beer-name"></h3>
+                    <div class="beer-details">
+                        <div>
+                            <p class="beer-type"></p>
                         </div>
-                        <p class="beer-description"></p>
+                        <div>
+                            <p class="abv"></p>
+                        </div>
                     </div>
+                    <p class="beer-description"></p>
+                </div>
             </section>
 
             <section class="side-panel right-panel change-background">
                 <!-- <div class="change-background"> -->
-                    <h3 class="brewery"></h3>
-                    <!-- <p class="brewery-description">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Error porro asperiores dolores ea unde,
+                <h3 class="brewery"></h3>
+                <!-- <p class="brewery-description">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Error porro asperiores dolores ea unde,
                         fugiat consectetur magnam vitae libero incidunt reprehenderit et quasi aspernatur temporibus
                         eligendi voluptatum modi totam nostrum esse, odit deleniti debitis assumenda? Libero obcaecati
                         accusantium ea, nobis, culpa architecto et, nam dignissimos rerum enim molestiae minus
                         exercitationem.</p> -->
 
-                    <!-- ask about the semantics of a button -->
-                    <button class="location"></button>
-                    <div class="modal-overlay"></div>
-                    <div class="modal-container" id="modal">
-                        <div id="mapid"></div>
-                    </div>
-
-
+                <!-- ask about the semantics of a button -->
+                <button class="location"></button>
+                <!-- <div class="modal-overlay"></div> -->
+                <div class="modal-container" id="modal">
+                    <div id="mapid"></div>
                 </div>
-            </section>
+        </div>
+        </section>
         </div>
     </main>
 
-    
+
     <script src="./script.js"></script>
 </body>
 

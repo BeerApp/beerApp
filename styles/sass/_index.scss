@@ -14,6 +14,7 @@ h3 {
   font-size: 4.5rem;
   text-align: center;
   margin: 0;
+  // visibility:visible;
 }
 
 h1 {
@@ -56,6 +57,19 @@ main {
   max-height: 1600px;
 }
 
+main {
+  // display: none;
+  visibility: hidden;
+  height: 0;
+  overflow: hidden;
+}
+
+.visible {
+  visibility: visible;
+  height: 100vh;
+  overflow: unset;
+}
+
 header {
   background-image: url("../assets/RAIN\ OR\ SHINE\ BEER\ IS\ FINE-1.png");
   background-size: cover;
@@ -88,14 +102,25 @@ header {
       font-weight: bold;
     }
 
+    .error-message {
+      visibility: hidden;
+      font-family: $font-2;
+      font-size: 0.8rem;
+      text-transform: uppercase;
+
+      color: red;
+      margin: 6px;
+    }
+
     input[type=text] {
-      margin-top: 1.5%;
+      // margin-top: 1.5%;
       padding: 2px;
       width: 30%;
       align-self: center;
       background: transparent;
       border: none;
       border-bottom: 1.5px solid black;
+      border-radius: 30px 30px 0 0;
       text-align: center;
       text-transform: uppercase;
       font-family: $font-2;
@@ -118,11 +143,9 @@ header {
 
 .change-background {
   background: $accent-color;
-  // position: relative;
 }
 
 .beer-page {
-  position: relative;
   width: 100%;
   height: 100%;
 
@@ -209,67 +232,60 @@ header {
   }
 
   p.beer-description {
-  font-family: $font-2;
-}
-
-button.beer-info {
-  font-family: $font-2;
-  font-weight: bold;
-  cursor: pointer;
-  text-transform: uppercase;
-  border: 1.5px solid rgb(252, 235, 2);
-  background:rgb(252, 235, 2);
-  // trbl
-  padding: 10px 20px;
-  &:hover {
-    border: 1.5px solid black;
+    font-family: $font-2;
   }
 }
 
-  .beer-results {
-    order:2;
+.beer-results {
+  order:2;
+  
+  width: 50%;
+  height: 100%;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  .weather-container {
+    text-transform: uppercase;
+
+    padding: 10px;
+    border-radius: 50px 50px 0 0;
+    box-shadow: 0 0 12px -5px #6f6f6f;
+  }
+}
+
+.results-title {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.image-container {
+  max-height: 75%;
+  height: auto;
+  width: auto;
+  padding: 0 40px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  
+  img {
+    display: block;
+    object-fit: contain;
+    margin: 0 auto;
     
-    width: 50%;
-    height: 100%;
-
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-
-    position: relative;
-  }
-
-  .results-title {
-    flex-grow: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-  }
-
-  .image-container {
-    max-height: 80%;
-    height: auto;
     width: auto;
-    padding: 0 40px;
-
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
+    height: auto;
+    max-width: 100%;
+    max-height: 100%;
     
-    img {
-      display: block;
-      object-fit: contain;
-      margin: 0 auto;
-      
-      width: auto;
-      height: auto;
-      max-width: 100%;
-      max-height: 100%;
-      
-      border-radius: 40px 40px 0 0;
-    }
+    border-radius: 40px 40px 0 0;
   }
 }
+
 
 .location {
   background: transparent; 
@@ -281,34 +297,36 @@ button.beer-info {
   }
 }
 
-.modal-overlay {
-  height: 100vh;
-  width: 100vw;
-  background:rgb(252, 235, 2);
-  position: absolute;
-  left: 0;
+.modal-container {
+  visibility: hidden;
+  position: fixed;
   top: 0;
   right: 0;
   bottom: 0;
-  display: none;
-}
+  left: 0;
 
-.modal-container {
-  display: none;
-  position: fixed;
-  left: 50%;
-  margin-left: -450px;
-  top: 50%;
-  margin-top: -325px;
-  // width: 500px;
-  // height: 350px;
+  width: 100vw;
+  height: calc(100px*100vh);
+  // padding: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 
 #mapid {
-  width: 900px;
-  height: 650px;
+  padding: 70px;
+
+  height: calc(0.833 * 100vw - 160.06px);
+  width: 100%;
+  max-height: 70vh;
+  max-width: 70%;
+  margin: 0 auto;
+  min-height: 270px;
+  min-width: 270px;
+
   border-radius: 30px;
+  box-shadow: 0 0 10px #6f6f6f;
 }
 
 .beer-info-text {
