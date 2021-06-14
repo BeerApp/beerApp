@@ -631,7 +631,7 @@ header form:focus > input[type=text], header form:hover > input[type=text] {
           justify-content: center;
 }
 
-#mapid {
+.map {
   padding: 70px;
   height: calc(0.833 * 100vw - 160.06px);
   width: 100%;
