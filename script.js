@@ -37,6 +37,9 @@ beerApp.breweryLibrary = [
         post: "M5J 2K9",
         long: -79.356870,
         lat: 43.706700,
+        facebook: "https://www.facebook.com/Amsterdambeer/",
+        instagram: "https://www.instagram.com/amsterdambeer/?hl=en",
+        website: "amsterdambeer.com",
         beerList: [
             {
                 name: "Space Invader",
@@ -66,6 +69,9 @@ beerApp.breweryLibrary = [
         post: 'M4M 1H1',
         long: -79.349600,
         lat: 43.658730,
+        facebook: "https://www.facebook.com/Brickworks.TO/",
+        instagram: "https://www.instagram.com/brickworkscider/?hl=en",
+        website: "theciderhouse.ca",
         beerList: [
             {
                 name: "Batch: 1904",
@@ -75,7 +81,7 @@ beerApp.breweryLibrary = [
                 size: 473,
                 price: 3.50,
                 img: "https://www.theciderhouse.ca/sites/g/files/yrakuj166/files/products/2020-05/img-prod-batch.png",
-                description: `Batch: 1904 delivers a dry, tart cider with a refreshing full apple finish. Each can is proudly crafted with at least 7 fresh-pressed Ontario apples.`
+                description: `A dry, tart cider with a refreshing full apple finish. Each can is proudly crafted with at least 7 fresh-pressed Ontario apples.`
             }
         ]
     },
@@ -85,6 +91,9 @@ beerApp.breweryLibrary = [
         post: 'M6H 1N2',
         long: -79.437820,
         lat: 43.659580,
+        facebook: "https://www.facebook.com/BurdockBrewery/",
+        instagram: "https://www.instagram.com/burdockbrewery/?hl=en",
+        website: "burdockbrewery.com",
         beerList: [
             {
                 name: 'Sea Barrel 23',
@@ -96,7 +105,7 @@ beerApp.breweryLibrary = [
                 img:
                     'https://cdn.shopify.com/s/files/1/0006/4598/8407/products/SEABARREL23333-web_750x.jpg?v=1614279807',
                 description:
-                    'Aged in stainless steel barrels with Sea Buckthorns for one month and bottle conditioned for 1 year. Tastes like Sea Buckthorn (surprise!) aka little popping orange bursts of sunshine',
+                    'Aged with Sea Buckthorns for one month and bottle conditioned for 1 year. Tastes like (surprise!) sea buckthorn.',
             },
             {
                 name: 'Pilsner',
@@ -108,7 +117,7 @@ beerApp.breweryLibrary = [
                 img:
                     'https://cdn.shopify.com/s/files/1/0006/4598/8407/products/PILSNERweb_750x.jpg?v=1604699163',
                 description:
-                    'A crisp, dry, European-style Pilsner. Refreshing bitterness, showing off our lovely pilsner malt. Dry-hopped with European hops for an herbal, subtle character',
+                    'A crisp, dry, European-style Pilsner. Refreshing bitterness, showing off our lovely pilsner malt. Dry-hopped with European hops.',
             },
         ]
     },
@@ -118,9 +127,12 @@ beerApp.breweryLibrary = [
         post: 'M6H 2B8',
         long: -79.436220,
         lat: 43.669850,
+        facebook: "https://www.facebook.com/bloodbrothersbrewing/",
+        instagram: "https://www.instagram.com/bloodbrothersbrewing/?hl=en",
+        website: "bloodbrothersbrewing.com",
         beerList: [
             {
-                name: 'Paradise Lost - Guava',
+                name: 'Paradise Lost Guava',
                 type: 'Sour Ale',
                 category: 'Sour',
                 abv: 6.9,
@@ -139,6 +151,9 @@ beerApp.breweryLibrary = [
         post: 'M6J 2Z5',
         long: -79.420097,
         lat: 43.647079,
+        facebook: "https://www.facebook.com/BellwoodsBrewery/",
+        instagram: "https://www.instagram.com/bellwoodsbeer/?hl=en",
+        website: "bellwoodsbrewery.com",
         beerList: [
             {
                 name: 'Roman Candle',
@@ -174,17 +189,17 @@ beerApp.breweryLibrary = [
                 img:
                     'https://images.squarespace-cdn.com/content/v1/55081ed2e4b0db4245a9f024/1614359014692-NYPKR9UPSVV662LMMXGV/ke17ZwdGBToddI8pDm48kFQQgP34qnCpeHaeAOzTt7pZw-zPPgdn4jUwVcJE1ZvWQUxwkmyExglNqGp0IvTJZamWLI2zvYWH8K3-s_4yszcp2ryTI0HqTOaaUohrI8PICHnXC1b9smDvYLPdL-DS7U1pkhCtl83kemXd5r3C5ngKMshLAGzx4R3EDFOm1kBS/Beer+-+Bellwoods+Jelly+King_crop800px_bright%26contrast_tone%26warm_FINAL.jpg?format=1000w',
                 description:
-                    'An everyday, juicy, drinkable sour with punchy hop aromatics and fruity foundational flavours. Low bitterness, light body, and pale yellow in colour, with notes of fuzzy peach, tangerine, and cedar.',
+                    'Hop aromatics and fruity foundational flavours. Low bitterness, light body, and pale yellow in colour, with notes of fuzzy peach, tangerine, and cedar.',
             },
             {
                 name: "Farmageddon",
-                type: "Barrel Aged Wild Farmhouse Ale",
+                type: "Wild Farmhouse Ale",
                 category: "Sour",
                 abv: 6.3,
                 size: 500,
                 price: 12.39,
                 img: "https://cdn.shopify.com/s/files/1/0072/8449/0309/products/Farmageddon_Batch15copy_460x.jpg?v=1595521561",
-                description: "A wild farmhouse ale that we've been brewing, blending, and aging for almost as many years as we've been open. A refined, effervescent, and delicious beer worthy of special occasions and idle weeknights."
+                description: "A barrel-aged wild farmhouse ale. Refined, effervescent, and delicious. Worthy of special occasions and idle weeknights."
             },
         ]
     },
@@ -194,6 +209,9 @@ beerApp.breweryLibrary = [
         post: 'M6N 0B1',
         lat: 43.67374,
         long: -79.47898,
+        facebook: "https://www.facebook.com/karbonbrewing/",
+        instagram: "https://www.instagram.com/karbonbrewing/?hl=en",
+        website: "karbonbrewing.com",
         beerList: [
             {
                 name: 'One World',
@@ -217,7 +235,7 @@ beerApp.breweryLibrary = [
                 img:
                     'https://eadn-wc02-3129471.nxedge.io/cdn/media/catalog/product/cache/fe0b6c8977d11b269549479dbdad08a9/6/0/60a66b44c2b3c.png',
                 description:
-                    'A bright, crisp, golden lager with a pleasant malty sweetness. Balanced with a nice floral hop aroma and slight bitterness. Round and drinkable, this delicious lager is brewed with Ontario malt and hops.',
+                    'A bright, crisp, golden lager with malty sweetness. Floral hop aroma and slight bitterness. Brewed with Ontario malt and hops.',
             },
         ]
     },
@@ -227,6 +245,9 @@ beerApp.breweryLibrary = [
         post: 'M4L 3W9',
         lat: 43.67365,
         long: -79.33042,
+        facebook: "",
+        instagram: "https://www.instagram.com/leftfieldbrewery/?hl=en",
+        website: "leftfieldbrewery.ca",
         beerList: [
             {
                 name: 'Sweet Spot',
@@ -238,7 +259,7 @@ beerApp.breweryLibrary = [
                 price: 3.99,
                 img: 'https://pbs.twimg.com/media/EMFHNYWWkAA4hSu.jpg',
                 description:
-                    'A tasty mocha-inspired treat. We developed a sweet stout recipe and added lactose, roasted & crushed cocoa nibs and coffee beans during conditioning. The result is a rich and decadent blend of chocolate, caramel and vanilla topped off with a toasty, sweet and creamy marshmallow.',
+                    'Rich and decadent blend of chocolate, caramel and vanilla topped off with a toasty, sweet and creamy marshmallow.',
             },
             {
                 name: 'Lo Viste',
@@ -250,7 +271,7 @@ beerApp.breweryLibrary = [
                 img:
                     'https://cododesign.com/wp-content/uploads/2019/07/LeftField07-1200x1200.png',
                 description:
-                    'Lo Viste Mojito Sour is a tart, quenching ale packed with lime juice and zest with a crisp hint of spearmint. Celebrate victory with this satisfying spring sipper! Contains wheat.',
+                    'A tart, quenching ale packed with lime juice and zest with a crisp hint of spearmint. Contains wheat.',
             },
             {
                 name: "O'Neill",
@@ -262,7 +283,7 @@ beerApp.breweryLibrary = [
                 img:
                     'https://www.canadianbeernews.com/wp-content/uploads/2021/03/leftfield_oneillstout.jpg',
                 description:
-                    'Made with 100% Canadian ingredients. A base of Barn Owl (Ontario) Pale Ale malt provides a lightly toasted malt background, while Red Shed (Alberta) Roasted Barley provides flavours of rich chocolate and freshly brewed coffee while remaining light and refreshing with a balanced bitterness.',
+                    'Lightly toasted malt background. Provides flavours of rich chocolate and freshly brewed coffee while remaining light and refreshing with a balanced bitterness.',
             },
             {
                 name: 'Bricks + Mortar',
@@ -274,7 +295,7 @@ beerApp.breweryLibrary = [
                 img:
                     'https://www.leftfieldbrewery.ca/wp-content/uploads/2015/10/BricksMortar_web.jpg',
                 description:
-                    'Pilot’s ‘Community’ Seasonal Blend of Guatemalan and Columbian beans were added in the final stages of conditioning imparting notes of ripe plum, dark honey and milk chocolate expressing the unique conditions of its origin.',
+                    'Guatemalan and Columbian beans added in the final stages of conditioning, imparting notes of ripe plum, dark honey and milk chocolate.',
             },
             {
                 name: '7th Inning Seltzer',
@@ -296,6 +317,9 @@ beerApp.breweryLibrary = [
         post: 'M4L 3B2',
         long: -79.3191,
         lat: 43.67251,
+        facebook: "https://www.facebook.com/GodspeedBrewery/",
+        instagram: "https://www.instagram.com/godspeedbeer/?hl=en",
+        website: "godspeedbrewery.com",
         beerList: [
             {
                 name: 'Polotmavý Lezák 11°',
@@ -307,7 +331,7 @@ beerApp.breweryLibrary = [
                 img:
                     'https://cdn.shopify.com/s/files/1/2133/7549/products/image_9a76f662-f233-43b0-8a3f-3b2f5ab726dd.jpg?v=1610381502',
                 description:
-                    'A balanced, clean, and malt-rich amber lager with notes of toasted bread loaf crust, caramel, peppery spice, and distant granola. A generous carbonation and firm bitterness.',
+                    'A balanced, clean, and malt-rich amber lager. Notes of toasted bread loaf crust, caramel, peppery spice, and granola. Generous carbonation, firm bitterness.',
             },
             {
                 name: 'Yuzu',
@@ -320,7 +344,7 @@ beerApp.breweryLibrary = [
                 img:
                     'https://d2j6dbq0eux0bg.cloudfront.net/images/28682722/1661620674.jpg',
                 description:
-                    'Yuzu combines Japanese citrus and Belgian yeast. Restrained hopping to create a light, lively beer accentuated by mild tartness and minerality. The combination of fruit and saison characteristics creates a dramatic nose of freshly-peeled clementines, all pith and bright orange.',
+                    'Yuzu combines Japanese citrus and Belgian yeast. Light, lively with mild tartness and minerality. The combination of fruit and saison characteristics creates a dramatic nose of freshly-peeled clementines.',
             },
         ]
     },
@@ -330,10 +354,13 @@ beerApp.breweryLibrary = [
         post: 'M4L 1A8',
         long: -79.31997,
         lat: 43.66371,
+        facebook: "https://www.facebook.com/rorschachbrewing/",
+        instagram: "https://www.instagram.com/rorschachbeer/?hl=en",
+        website: "rorschachbrewing.com",
         beerList: [
             {
                 name: 'Truth Serum',
-                type: 'Double Dry-Hopped IPA',
+                type: 'Double IPA',
                 category: 'IIPA',
                 abv: 6.5,
                 size: 335,
@@ -341,7 +368,7 @@ beerApp.breweryLibrary = [
                 img:
                     'https://images.squarespace-cdn.com/content/v1/5f69440bd09be264b24e25bd/1614725887052-OL92W8M09UDC2KWD78XL/ke17ZwdGBToddI8pDm48kKirrQBMV7BsaOS4YyKHKkRZw-zPPgdn4jUwVcJE1ZvWQUxwkmyExglNqGp0IvTJZUJFbgE-7XRK3dMEBRBhUpw9gAWIthtj5CQ6kWys7izdrhgbP5CWW3u5k8NkuWh_NcsSu5Bcj9PDFRxg_BFbKbc/TruthSerumCans.jpg?format=1500w',
                 description:
-                    'Brewed with golden oats and hopped with Citra, Simcoe and Mosaic. Notes of mango passionfruit, mandarin, pine, tropical fruit and grapefruit. A nuanced bitterness with a hint of sweetness.',
+                    'Brewed with golden oats. Hopped with Citra, Simcoe and Mosaic. Notes of mango passionfruit, mandarin, pine, tropical fruit and grapefruit.',
             },
             {
                 name: 'Malevolent Benevolence',
@@ -353,7 +380,7 @@ beerApp.breweryLibrary = [
                 img:
                     'https://images.squarespace-cdn.com/content/v1/5f69440bd09be264b24e25bd/1610483637388-1DZ7W7K2G5PR983HSY90/ke17ZwdGBToddI8pDm48kLIj3bb_uLOihttx7hjsPSV7gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z4YTzHvnKhyp6Da-NYroOW3ZGjoBKy3azqku80C789l0lqfkVpRp1g_2L-WsTQRP4IUeQvxhQLxDj0GQzUQT21mzi2feheXFTkax-QWHoTYtA/CoffeeCakeMB.jpg?format=1500w',
                 description:
-                    'Notes of fresh brewed coffee, deep cinnamon, rich chocolate, vanilla, toffee, and dark fruits, with an extremely smooth texture, with balanced sweetness.',
+                    'Notes of fresh brewed coffee, deep cinnamon, rich chocolate, vanilla, toffee, and dark fruits. Smooth texture, balanced sweetness.',
             },
         ]
     },
@@ -363,6 +390,9 @@ beerApp.breweryLibrary = [
         post: 'M4L 1A1',
         long: -79.32896,
         lat: 43.66165,
+        facebook: "https://www.facebook.com/BlackLabBeer/",
+        instagram: "https://www.instagram.com/blacklabbeer/?hl=en",
+        website: "blacklab.beer",
         beerList: [
             {
                 name: 'Sticky Paws',
@@ -374,7 +404,7 @@ beerApp.breweryLibrary = [
                 img:
                     'https://cdn.shopify.com/s/files/1/0564/5605/2889/products/sticky-paws-lightbox-photo_1024x1024@2x.png?v=1621632795',
                 description:
-                    'Aromas of mild roast, coffee and maple brought to you in a very easy drinking package. Brewed with Ontario sourced amber maple syrup and made to be refreshing and easy going.',
+                    'Brewed with Ontario sourced amber maple syrup and made to be refreshing and easy going. Aromas of mild roast coffee and maple syrup.',
             },
             {
                 name: 'Sitting Pretty',
@@ -386,7 +416,7 @@ beerApp.breweryLibrary = [
                 img:
                     'https://cdn.shopify.com/s/files/1/0564/5605/2889/products/SittingPretty_1024x1024@2x.png?v=1620222836',
                 description:
-                    'Hazy citrus forward American pale with with rye malt. Assertive with a light body and dry finish. Rye malt provides a spicy undertone to an otherwise very passive malt profile. Mosaic, Citra, Denali hops.',
+                    'Citrus forward American Pale with rye malt. Light body and dry finish. Provides a spicy undertone to an otherwise very passive malt profile. Mosaic, Citra, Denali hops.',
             },
         ]
     },
@@ -396,6 +426,9 @@ beerApp.breweryLibrary = [
         post: 'M8Z 1L8',
         long: -79.50476,
         lat: 43.62253,
+        facebook: "https://www.facebook.com/GreatLakesBeer/",
+        instagram: "https://www.instagram.com/greatlakesbeer/?hl=en",
+        website: "greatlakesbeer.com",
         beerList: [
             {
                 name: 'Octopus Wants To Fight',
@@ -408,7 +441,7 @@ beerApp.breweryLibrary = [
                 img:
                     'https://www.lcbo.com/content/dam/lcbo/products/458273.jpg/jcr:content/renditions/cq5dam.web.1280.1280.jpeg',
                 description:
-                    'The first sip provides some sweetness, some dank grass combined with pine needles and then onto “juicy fruit”. Soft body with some middle mouthfeel bitterness that tastes like another.',
+                    'Sweetness and dank grass combined with pine needles and then onto “juicy fruit”. Soft body with some middle mouthfeel bitterness.',
             },
             {
                 name: 'Tango',
@@ -420,7 +453,7 @@ beerApp.breweryLibrary = [
                 img:
                     'https://www.lcbo.com/content/dam/lcbo/products/020663.jpg/jcr:content/renditions/cq5dam.web.1280.1280.jpeg',
                 description:
-                    "Amarillo hops provide a wonderful orange and zested lime component alongside some floral characteristics. Bright and light. The fine touch of the brewers' sour-blend makes TANGO a well-rounded, zesty/tangy, thirst quenching, sessionable, tart wheat ale.",
+                    "Amarillo hops provide orange and lime zest component with floral characteristics. Bright and light. Well-rounded, zesty/tangy, thirst quenching, sessionable, tart wheat ale.",
             },
             {
                 name: "Canuck",
@@ -430,7 +463,7 @@ beerApp.breweryLibrary = [
                 size: 473,
                 price: 2.90,
                 img: "https://www.greatlakesbeer.com/glb/wp-content/uploads/2014/11/Canuck-Pale-Ale-Poster-2020-663x1024.jpg",
-                description: "The minute you crack your can, aroma of grapefruit, mango and pine hit you in the face. Soft carbonation leads into a sweet honeyish start before it gives way to more grapefruit, tropical citrus, canned peaches and pine. Light to medium body with a very dry finish."
+                description: "Aromas of grapefruit, mango and pine. Soft carbonation. Notes of grapefruit, tropical citrus, peaches and pine. Light to medium body with a very dry finish."
             },
             {
                 name: "Shinny Pants",
@@ -450,6 +483,9 @@ beerApp.breweryLibrary = [
         post: 'M6P 1Y8',
         long: -79.53835,
         lat: 43.63809,
+        facebook: "https://m.facebook.com/profile.php?id=270701859716807&__tn__=C-R",
+        instagram: "https://www.instagram.com/indiealehouse/?hl=en",
+        website: "indiealehouse.com",
         beerList: [
             {
                 name: 'Zombie Apocalypse',
@@ -472,7 +508,7 @@ beerApp.breweryLibrary = [
                 img:
                     'https://cdn.shopify.com/s/files/1/0009/8484/2291/products/Lemonade2_1080x.jpg?v=1585786744',
                 description:
-                    "This beer pays homage to everyone's favourite summer drink. Dry hopped and brewed with meyer lemons and lactose, this beer is unbelievably refreshing with a balanced tartness and notes of - you guessed it - lemon.",
+                    "Dry hopped and brewed with meyer lemons and lactose. Unbelievably refreshing with balanced tartness and notes of - you guessed it - lemon.",
             },
             {
                 name: 'Momento Mori',
@@ -517,7 +553,7 @@ beerApp.init = function () {
     beerApp.resultsPage = document.querySelector('main');
     beerApp.getUserInput();
     beerApp.createMap();
-    
+
     // beerApp.getTheWeather("toronto");
 }
 
@@ -651,6 +687,16 @@ beerApp.displayInfo = function (beerSuggestion, currentTemp) {
     const beerAbv = document.querySelector('.abv');
     beerAbv.innerText = `${beerSuggestion.abv}% abv`;
 
+    const beerFb = document.querySelector('.facebook')
+    beerFb.href = `${beerSuggestion.parent.facebook}`
+
+    const beerInsta = document.querySelector('.instagram')
+    beerInsta.href = `${beerSuggestion.parent.instagram}`
+
+    const beerWebsite = document.querySelector('.website')
+    beerWebsite.href = `https://${beerSuggestion.parent.website}/`
+    beerWebsite.innerText = `${beerSuggestion.parent.website}`
+
     const breweryAddress = document.querySelector('.location');
     breweryAddress.innerText = `${beerSuggestion.parent.location}`;
     breweryAddress.addEventListener('click', function (event) {
@@ -697,6 +743,13 @@ beerApp.displayMap = function (beerSuggestion) {
 
         // if (event.target != modalContainer);
     })
+
+    // create map 
+    // put the map in our init function so it's available on page load 
+    // 
+
+
+
 
 
     // modalOverlay.addEventListener('click', function () {

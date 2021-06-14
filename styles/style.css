@@ -296,18 +296,20 @@ h2 {
   font-size: 2.5rem;
 }
 h2.beer-name {
-  font-size: 3.5rem;
+  font-size: 3rem;
   font-family: "Londrina Solid", cursive;
+  text-shadow: 3px 3px #fff99f;
 }
 h2.brewery {
   text-shadow: 0.3px 0.3px black;
   margin: 10px 0 0 0;
+  padding-bottom: 50px;
 }
 
 h3 {
   padding: 20px 0;
   font-family: "Roboto Mono", monospace;
-  font-size: calc(0.8rem + 1.8vw);
+  font-size: calc(0.65rem + 1.8vw);
   line-height: 1;
 }
 
@@ -426,6 +428,7 @@ header form:focus > input[type=text], header form:hover > input[type=text] {
       -ms-flex-pack: center;
           justify-content: center;
   padding: 30px 0;
+  text-transform: capitalize;
 }
 .beer-page .weather-container .fa-sun {
   margin-right: 1.5%;
@@ -474,7 +477,7 @@ header form:focus > input[type=text], header form:hover > input[type=text] {
 }
 .beer-page .side-panel .beer-details p {
   font-family: "Roboto Mono", monospace;
-  font-size: 1.5rem;
+  font-size: 1rem;
 }
 .beer-page .side-panel .beer-details p.beer-description {
   font-family: "Roboto Mono", monospace;
@@ -508,6 +511,22 @@ header form:focus > input[type=text], header form:hover > input[type=text] {
   font-family: "Roboto Mono", monospace;
   font-size: 0.9rem;
 }
+.beer-page .icons {
+  margin: 0 auto;
+}
+.beer-page .icons i {
+  font-size: 2rem;
+  padding-top: 20px;
+  cursor: pointer;
+  color: black;
+}
+.beer-page .website {
+  text-align: center;
+  padding-top: 20px;
+  font-family: "Roboto Mono", monospace;
+  color: black;
+  font-size: 0.8rem;
+}
 .beer-page p.beer-description {
   font-family: "Roboto Mono", monospace;
 }
@@ -517,7 +536,7 @@ header form:focus > input[type=text], header form:hover > input[type=text] {
       -ms-flex-order: 2;
           order: 2;
   width: 50%;
-  height: 100%;
+  margin-top: 50px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -528,9 +547,13 @@ header form:focus > input[type=text], header form:hover > input[type=text] {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 .beer-results .weather-container {
   text-transform: uppercase;
+  width: 100%;
   padding: 10px;
   border-radius: 50px 50px 0 0;
   -webkit-box-shadow: 0 0 12px -5px #6f6f6f;
@@ -587,9 +610,6 @@ header form:focus > input[type=text], header form:hover > input[type=text] {
   font-family: "Roboto Mono", monospace;
   cursor: pointer;
 }
-.location:hover {
-  letter-spacing: 0.5px;
-}
 
 .modal-container {
   visibility: hidden;
@@ -630,6 +650,57 @@ header form:focus > input[type=text], header form:hover > input[type=text] {
   font-size: 1rem;
 }
 
+@media (max-width: 1030px) {
+  .change-background,
+.beer-page {
+    background: white;
+  }
+
+  .beer-page {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    width: 100%;
+  }
+  .beer-page p.beer-description {
+    text-align: center;
+  }
+  .beer-page .side-panel {
+    width: 90%;
+    border-radius: 0;
+    margin: 0 auto;
+    padding-top: 20px;
+  }
+  .beer-page .side-panel.right-panel {
+    border-radius: 0;
+    -webkit-box-shadow: none;
+            box-shadow: none;
+    padding-top: 20px;
+  }
+  .beer-page .side-panel.left-panel {
+    -webkit-box-shadow: none;
+            box-shadow: none;
+  }
+  .beer-page .beer-results {
+    -webkit-box-ordinal-group: 1;
+        -ms-flex-order: 0;
+            order: 0;
+    width: 100%;
+  }
+  .beer-page .weather-container {
+    border-radius: 0;
+    -webkit-box-shadow: none;
+            box-shadow: none;
+    text-align: center;
+    padding: 30px;
+  }
+}
+@media (max-width: 900px) {
+  h3 {
+    font-size: calc(0.65rem + 1.8vw);
+  }
+}
 @media (max-width: 800px) {
   h1 {
     font-size: 4rem;
@@ -639,7 +710,18 @@ header form:focus > input[type=text], header form:hover > input[type=text] {
   }
 
   header form input[type=text] {
-    width: 50%;
+    width: 70%;
+  }
+
+  .image-container {
+    padding: 0;
+  }
+  .image-container img {
+    border-radius: 0;
+  }
+
+  .beer-page .side-panel .beer-details {
+    margin: 30px 0;
   }
 }
 @media (max-width: 680px) {
