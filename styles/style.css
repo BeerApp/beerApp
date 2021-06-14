@@ -296,18 +296,20 @@ h2 {
   font-size: 2.5rem;
 }
 h2.beer-name {
-  font-size: 3.5rem;
+  font-size: 3rem;
   font-family: "Londrina Solid", cursive;
+  text-shadow: 3px 3px #fff99f;
 }
 h2.brewery {
   text-shadow: 0.3px 0.3px black;
   margin: 10px 0 0 0;
+  padding-bottom: 50px;
 }
 
 h3 {
   padding: 20px 0;
   font-family: "Roboto Mono", monospace;
-  font-size: calc(0.8rem + 1.8vw);
+  font-size: calc(0.65rem + 1.8vw);
   line-height: 1;
 }
 
@@ -389,7 +391,6 @@ header form:focus > input[type=text], header form:hover > input[type=text] {
 }
 
 .beer-page {
-  position: relative;
   width: 100%;
   height: 100%;
   display: -webkit-box;
@@ -407,6 +408,7 @@ header form:focus > input[type=text], header form:hover > input[type=text] {
       -ms-flex-pack: center;
           justify-content: center;
   padding: 30px 0;
+  text-transform: capitalize;
 }
 .beer-page .weather-container .fa-sun {
   margin-right: 1.5%;
@@ -455,7 +457,7 @@ header form:focus > input[type=text], header form:hover > input[type=text] {
 }
 .beer-page .side-panel .beer-details p {
   font-family: "Roboto Mono", monospace;
-  font-size: 1.5rem;
+  font-size: 1rem;
 }
 .beer-page .side-panel .beer-details p.beer-description {
   font-family: "Roboto Mono", monospace;
@@ -489,20 +491,24 @@ header form:focus > input[type=text], header form:hover > input[type=text] {
   font-family: "Roboto Mono", monospace;
   font-size: 0.9rem;
 }
+.beer-page .icons {
+  margin: 0 auto;
+}
+.beer-page .icons i {
+  font-size: 2rem;
+  padding-top: 20px;
+  cursor: pointer;
+  color: black;
+}
+.beer-page .website {
+  text-align: center;
+  padding-top: 20px;
+  font-family: "Roboto Mono", monospace;
+  color: black;
+  font-size: 0.8rem;
+}
 .beer-page p.beer-description {
   font-family: "Roboto Mono", monospace;
-}
-.beer-page button.beer-info {
-  font-family: "Roboto Mono", monospace;
-  font-weight: bold;
-  cursor: pointer;
-  text-transform: uppercase;
-  border: 1.5px solid #fceb02;
-  background: #fceb02;
-  padding: 10px 20px;
-}
-.beer-page button.beer-info:hover {
-  border: 1.5px solid black;
 }
 .beer-page .beer-results {
   -webkit-box-ordinal-group: 3;
@@ -571,14 +577,11 @@ header form:focus > input[type=text], header form:hover > input[type=text] {
   font-family: "Roboto Mono", monospace;
   cursor: pointer;
 }
-.location:hover {
-  letter-spacing: 0.5px;
-}
 
 .modal-overlay {
   height: 100vh;
   width: 100vw;
-  background: #fceb02;
+  background: rgba(252, 235, 2, 0);
   position: absolute;
   left: 0;
   top: 0;
@@ -591,14 +594,14 @@ header form:focus > input[type=text], header form:hover > input[type=text] {
   display: none;
   position: fixed;
   left: 50%;
-  margin-left: -450px;
+  margin-left: -25vw;
   top: 50%;
-  margin-top: -325px;
+  margin-top: -40vh;
 }
 
 #mapid {
-  width: 900px;
-  height: 650px;
+  width: 50vw;
+  height: 80vh;
   border-radius: 30px;
 }
 
@@ -607,6 +610,51 @@ header form:focus > input[type=text], header form:hover > input[type=text] {
   font-size: 1rem;
 }
 
+@media (max-width: 1030px) {
+  main {
+    height: auto;
+  }
+
+  .beer-page {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    background: white;
+    width: 100%;
+  }
+  .beer-page p.beer-description {
+    text-align: center;
+  }
+  .beer-page .side-panel {
+    width: 70%;
+    background: white;
+    border-radius: 0;
+    margin: 0 auto;
+    padding-top: 20px;
+  }
+  .beer-page .side-panel.right-panel {
+    border-radius: 0;
+    -webkit-box-shadow: none;
+            box-shadow: none;
+    padding-top: 20px;
+  }
+  .beer-page .side-panel.left-panel {
+    -webkit-box-shadow: none;
+            box-shadow: none;
+  }
+  .beer-page .beer-results {
+    -webkit-box-ordinal-group: 1;
+        -ms-flex-order: 0;
+            order: 0;
+    width: 100%;
+  }
+}
+@media (max-width: 900px) {
+  h3 {
+    font-size: calc(0.65rem + 1.8vw);
+  }
+}
 @media (max-width: 800px) {
   h1 {
     font-size: 4rem;

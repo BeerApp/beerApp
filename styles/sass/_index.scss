@@ -31,22 +31,25 @@ h1 {
 
 h2 {
   font-size: 2.5rem;
+  // font-family: $font-2;
   
   &.beer-name {
-    font-size: 3.5rem;
+    font-size: 3rem;
     font-family: $font-1-solid;
+    text-shadow: 3px 3px $accent-color;
   }
 
   &.brewery {
     text-shadow: 0.3px 0.3px black;
     margin: 10px 0 0 0;
+    padding-bottom: 50px;
   }
 }
 
 h3 {
   padding: 20px 0;
   font-family: $font-2;
-  font-size: calc(0.8rem + 1.8vw);
+  font-size: calc(0.65rem + 1.8vw);
   line-height: 1;
 }
 
@@ -122,7 +125,7 @@ header {
 }
 
 .beer-page {
-  position: relative;
+  // position: relative;
   width: 100%;
   height: 100%;
 
@@ -135,6 +138,7 @@ header {
     font-family: $font-2;
     justify-content: center;
     padding: 30px 0;
+    text-transform: capitalize;
 
     .fa-sun {
       margin-right: 1.5%;
@@ -174,7 +178,7 @@ header {
 
       p {
         font-family: $font-2;
-        font-size: 1.5rem;
+        font-size: 1rem;
       }
 
       p.beer-description {
@@ -208,22 +212,26 @@ header {
     }
   }
 
+  .icons {
+    margin: 0 auto;
+    i {
+      font-size: 2rem;
+      padding-top: 20px;
+      cursor: pointer;
+      color: black;
+    }
+  }
+
+  .website {
+    text-align: center;
+    padding-top: 20px;
+    font-family: $font-2;
+    color: black;
+    font-size: 0.8rem;
+  }
+
   p.beer-description {
   font-family: $font-2;
-}
-
-button.beer-info {
-  font-family: $font-2;
-  font-weight: bold;
-  cursor: pointer;
-  text-transform: uppercase;
-  border: 1.5px solid rgb(252, 235, 2);
-  background:rgb(252, 235, 2);
-  // trbl
-  padding: 10px 20px;
-  &:hover {
-    border: 1.5px solid black;
-  }
 }
 
   .beer-results {
@@ -276,15 +284,12 @@ button.beer-info {
   border: none;
   font-family: $font-2;
   cursor: pointer;
-  &:hover {
-    letter-spacing: 0.5px;
-  }
 }
 
 .modal-overlay {
   height: 100vh;
   width: 100vw;
-  background:rgb(252, 235, 2);
+  background:rgba(252, 235, 2, 0);
   position: absolute;
   left: 0;
   top: 0;
@@ -297,17 +302,16 @@ button.beer-info {
   display: none;
   position: fixed;
   left: 50%;
-  margin-left: -450px;
+  margin-left: -25vw;
   top: 50%;
-  margin-top: -325px;
-  // width: 500px;
-  // height: 350px;
+  margin-top: -40vh;
 }
 
 
 #mapid {
-  width: 900px;
-  height: 650px;
+  width: 50vw;
+  height: 80vh;
+  // max-height: 50vh;
   border-radius: 30px;
 }
 
