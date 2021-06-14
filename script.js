@@ -568,21 +568,21 @@ beerApp.getTheWeather = function (location) {
 }
 
 beerApp.chooseBeer = function () {
-    const CurrentTemp = Math.floor(beerApp.currentWeather.main.temp - 273.15);
+    const currentTemp = Math.floor(beerApp.currentWeather.main.temp - 273.15);
 
     const categoryList = ["Pilsner", "Lager"];
     const beerList = [];
 
-    if (CurrentTemp < 5) {
+    if (currentTemp < 5) {
         categoryList.push("Stout", "Porter", "IIPA", "Black Lager", "Amber Lager")
 
         beerList.push(...beerApp.allBeer.filter(beer => {
             return beer.category != "Sour" && beer.abv >= 6;
         }))
 
-    } else if (CurrentTemp >= 5) {
+    } else if (currentTemp >= 5) {
 
-        if (CurrentTemp < 15) {
+        if (currentTemp < 15) {
             categoryList.push("wheat", "Saison", "IIPA", "APA");
 
             beerList.push(...beerApp.allBeer.filter(beer => {
@@ -590,14 +590,14 @@ beerApp.chooseBeer = function () {
             }))
         }
     }
-    if (CurrentTemp >= 10) {
+    if (currentTemp >= 10) {
         categoryList.push("Sour");
 
         beerList.push(...beerApp.allBeer.filter(beer => {
             return beer.category === "IPA" && beer.abv < 6;
         }))
 
-        if (CurrentTemp >= 15) {
+        if (currentTemp >= 15) {
             categoryList.push("Cider", "Hard Seltzer");
         }
     }
@@ -611,7 +611,7 @@ beerApp.chooseBeer = function () {
     const randomValue = Math.floor(Math.random() * beerList.length);
     const beerSuggestion = beerList[randomValue];
 
-    beerApp.displayInfo(beerSuggestion, CurrentTemp);
+    beerApp.displayInfo(beerSuggestion, currentTemp);
 }
 
 beerApp.displayInfo = function (beerSuggestion, currentTemp) {
