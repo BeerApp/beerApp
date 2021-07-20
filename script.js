@@ -652,7 +652,10 @@ beerApp.displayInfo = function (beerSuggestion, currentTemp) {
     beerWebsite.innerText = `${beerSuggestion.parent.website}`;
 
     const breweryAddress = document.querySelector('.location');
-    breweryAddress.innerText = `${beerSuggestion.parent.location}`;
+    breweryAddress.innerHTML = `
+      <i class="fas fa-map-marker-alt"></i>
+      <span>${beerSuggestion.parent.location}</span> 
+    `;
     breweryAddress.addEventListener('click', function (event) {
         event.stopPropagation();
         beerApp.displayMap(beerSuggestion);

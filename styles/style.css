@@ -520,6 +520,10 @@ header form:focus > input[type=text], header form:hover > input[type=text] {
   cursor: pointer;
   color: black;
 }
+.beer-page .icons i:hover {
+  -webkit-filter: invert(40%);
+          filter: invert(40%);
+}
 .beer-page .website {
   text-align: center;
   padding-top: 20px;
@@ -609,6 +613,9 @@ header form:focus > input[type=text], header form:hover > input[type=text] {
   border: none;
   font-family: "Roboto Mono", monospace;
   cursor: pointer;
+}
+.location:hover {
+  text-decoration: underline;
 }
 
 .modal-container {
