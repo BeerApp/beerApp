@@ -238,7 +238,11 @@ header {
       padding-top: 20px;
       cursor: pointer;
       color: black;
-    }
+   
+      &:hover {
+         filter: invert(40%);
+      }
+   }
   }
 
   .website {
@@ -313,6 +317,10 @@ header {
   border: none;
   font-family: $font-2;
   cursor: pointer;
+  
+   &:hover {
+      text-decoration: underline;
+   }
 }
 
 .modal-container {
